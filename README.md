@@ -1,7 +1,7 @@
-# Nethesis UX glossary
+# Nethesis UX writing guide
 
-Terms, Italian translations and writing guidelines for the user interfaces of all Nethesis
-products: NS8, NethSecurity, NethVoice, NethVoice CTI and My.
+How to write the user interfaces of Nethesis products (NS8, NethSecurity, NethVoice, NethVoice
+CTI and My): style rules, and the glossary of terms with their Italian translations.
 
 ## Files
 

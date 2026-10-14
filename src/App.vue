@@ -11,7 +11,7 @@ import GuidelinesView from './components/GuidelinesView.vue'
 
 const tabs = [
   { name: 'glossary', label: 'Glossary' },
-  { name: 'guidelines', label: 'Writing guidelines' }
+  { name: 'guidelines', label: 'Guidelines' }
 ]
 
 const initialTab = new URLSearchParams(window.location.search).get('tab')
@@ -27,10 +27,10 @@ watch(selectedTab, (tab) => {
 
 <template>
   <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-    <NeHeading tag="h3">Nethesis UX glossary</NeHeading>
+    <NeHeading tag="h3">Nethesis UX writing guide</NeHeading>
     <p class="mt-2 mb-6 max-w-2xl text-gray-500 dark:text-gray-400">
-      Terms, Italian translations and writing guidelines for the user interfaces of all Nethesis
-      products.
+      How to write the user interfaces of Nethesis products: style rules, and the glossary of
+      terms with their Italian translations.
     </p>
     <NeTabs
       :tabs="tabs"
@@ -44,7 +44,7 @@ watch(selectedTab, (tab) => {
     <GuidelinesView v-else />
     <footer class="mt-12 text-xs text-gray-500 dark:text-gray-400">
       To propose a change, open a pull request on
-      <a href="https://github.com/NethServer/ux-glossary" class="underline">NethServer/ux-glossary</a>.
+      <a href="https://github.com/NethServer/ux-writing-guide" class="underline">NethServer/ux-writing-guide</a>.
     </footer>
   </div>
 </template>
