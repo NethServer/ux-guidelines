@@ -1,0 +1,74 @@
+/*
+  Copyright (C) 2026 Nethesis S.r.l.
+  SPDX-License-Identifier: GPL-3.0-or-later
+*/
+
+@import '@fortawesome/fontawesome-svg-core/styles.css' layer(fontawesome);
+@import 'tailwindcss';
+@import '@fontsource/poppins';
+
+/* theme and classes used by @nethesis/vue-components */
+@import '@nethesis/vue-components/theme.css';
+@source '../node_modules/@nethesis/vue-components';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-50: var(--color-sky-50);
+  --color-primary-100: var(--color-sky-100);
+  --color-primary-200: var(--color-sky-200);
+  --color-primary-300: var(--color-sky-300);
+  --color-primary-400: var(--color-sky-400);
+  --color-primary-500: var(--color-sky-500);
+  --color-primary-600: var(--color-sky-600);
+  --color-primary-700: var(--color-sky-700);
+  --color-primary-800: var(--color-sky-800);
+  --color-primary-900: var(--color-sky-900);
+  --color-primary-950: var(--color-sky-950);
+}
+
+@layer base {
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+
+  body {
+    @apply bg-gray-50 font-[Poppins] text-gray-900 dark:bg-gray-900 dark:text-gray-50;
+  }
+}
+
+/* guidelines.md rendered to HTML */
+.guidelines {
+  @apply max-w-3xl text-sm leading-6 text-gray-700 dark:text-gray-200;
+
+  h1 {
+    @apply hidden;
+  }
+  h2 {
+    @apply mt-10 mb-3 scroll-mt-6 text-lg font-semibold text-gray-900 dark:text-gray-50;
+  }
+  p,
+  ul,
+  table {
+    @apply mb-4;
+  }
+  ul {
+    @apply list-disc space-y-1 pl-5;
+  }
+  a {
+    @apply text-primary-700 underline dark:text-primary-500;
+  }
+  code {
+    @apply rounded bg-gray-100 px-1 py-0.5 text-[0.8125rem] dark:bg-gray-800;
+  }
+  table {
+    @apply w-full border-collapse overflow-hidden rounded-md text-left;
+  }
+  th {
+    @apply border-b border-gray-300 bg-gray-100 px-3 py-2 font-medium text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-50;
+  }
+  td {
+    @apply border-b border-gray-200 px-3 py-2 align-top dark:border-gray-700;
+  }
+}

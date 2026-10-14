@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE martif PUBLIC "ISO 12200:1999A//DTD MARTIF core (DXFcdV04)//EN" "TBXcdv04.dtd">
+<!-- Generated from glossary.yaml by scripts/build-data.mjs: do not edit. -->
+<martif type="TBX" xml:lang="en">
+<martifHeader>
+<fileDesc>
+<sourceDesc>
+<p>Nethesis UX glossary</p>
+</sourceDesc>
+</fileDesc>
+</martifHeader>
+<text>
+<body>
+
+</body>
+</text>
+</martif>
