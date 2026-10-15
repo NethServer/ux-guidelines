@@ -19,7 +19,7 @@ import { slug } from './slug.mjs'
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const checkOnly = process.argv.includes('--check')
 
-const PRODUCTS = ['all', 'ns8', 'nethsecurity', 'nethvoice', 'my']
+const PRODUCTS = ['all', 'ns8', 'nethsecurity', 'nethvoice', 'nethservice', 'neth360', 'my']
 const FIELDS = ['id', 'en', 'it', 'untranslatable', 'definition', 'products', 'avoid', 'notes']
 const TARGET_LANGUAGES = ['it']
 

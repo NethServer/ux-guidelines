@@ -1,7 +1,8 @@
 # Nethesis UX writing guide
 
-How to write the user interfaces of Nethesis products (NethServer 8, NethSecurity, NethVoice and
-My Nethesis): style rules, and the glossary of terms with their Italian translations.
+How to write the user interfaces of Nethesis products (NethServer 8, NethSecurity, NethVoice,
+NethService, Neth360 and My Nethesis): style rules, and the glossary of terms with their Italian
+translations.
 
 ## Files
 

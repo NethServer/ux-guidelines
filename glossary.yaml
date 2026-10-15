@@ -11,7 +11,7 @@
 #   it              preferred Italian translation (omit when untranslatable)
 #   untranslatable  true when the term stays in English in every language
 #   definition      one sentence, user oriented
-#   products        all | ns8 | nethsecurity | nethvoice | my
+#   products        all | ns8 | nethsecurity | nethvoice | nethservice | neth360 | my
 #   avoid.en        English words not to use for this concept
 #   avoid.it        Italian translations not to use (forbidden on Weblate)
 #   notes           optional usage notes
@@ -62,8 +62,46 @@
   definition: An optional feature bought on NethShop and granted to a system, such as Threat Shield.
   products: [all]
   avoid:
-    en: [Entitlement]
+    en: [Entitlement, Addon, Additional service]
+    it: [Servizio aggiuntivo]
   notes: 'The Italian plural does not change: "gli add-on".'
+
+- id: nethshop
+  en: NethShop
+  untranslatable: true
+  definition: The Nethesis online shop, where add-ons are bought.
+  products: [my]
+  avoid:
+    en: [Nethshop]
+
+# Features
+
+- id: threat-shield
+  en: Threat Shield
+  untranslatable: true
+  definition: >-
+    A security service that blocks malicious IP addresses and domains using blocklists.
+    The Nethesis blocklists require a subscription that includes the Threat Shield add-on.
+  products: [nethsecurity, ns8]
+  avoid:
+    en: [Threat shield, ThreatShield]
+  notes: 'Its parts are "Threat Shield IP" and "Threat Shield DNS".'
+
+- id: multiwan
+  en: MultiWAN
+  untranslatable: true
+  definition: The NethSecurity feature that uses several internet connections together, for load balancing or failover.
+  products: [nethsecurity]
+  avoid:
+    en: [Multi WAN, Multi-WAN]
+
+- id: flashstart
+  en: FlashStart
+  untranslatable: true
+  definition: A third-party cloud filter that blocks unwanted websites through DNS, integrated in NethSecurity.
+  products: [nethsecurity, my]
+  avoid:
+    en: [Flashstart]
 
 # Backup
 
@@ -87,8 +125,10 @@
     is a valid synonym to refer to it indirectly.
   products: [all]
   avoid:
-    en: [My]
-  notes: Write "My Nethesis" in full. "My" is only an informal short form, not used in user interfaces.
+    en: [My, my.nethesis.it]
+  notes: >-
+    Write "My Nethesis" in full. "My" is only an informal short form, not used in user
+    interfaces.
 
 - id: nethserver
   en: NethServer
@@ -122,3 +162,40 @@
   products: [all]
   avoid:
     en: [Nethvoice]
+
+- id: nethvoice-cti
+  en: NethVoice CTI
+  untranslatable: true
+  definition: The NethVoice web app for users, to make and receive calls and manage contacts, call history and presence.
+  products: [nethvoice]
+  avoid:
+    en: [NethCTI]
+  notes: >-
+    Inside NethVoice, "CTI" alone is fine when the context is clear. The mobile app is called
+    "NethVoice", not "NethCTI".
+
+- id: nethlink
+  en: NethLink
+  untranslatable: true
+  definition: The NethVoice CTI desktop app. It shows call notifications even when the browser is closed and supports click-to-call.
+  products: [nethvoice]
+  avoid:
+    en: [Nethlink]
+
+# Applications
+
+- id: webtop
+  en: WebTop
+  untranslatable: true
+  definition: The groupware application for mail, calendars, contacts and shared documents, installed on NethServer 8.
+  products: [ns8, nethservice]
+  avoid:
+    en: [Webtop]
+
+- id: nextcloud
+  en: Nextcloud
+  untranslatable: true
+  definition: The third-party application for file sharing and collaboration, installed on NethServer 8.
+  products: [ns8, nethservice]
+  avoid:
+    en: [NextCloud]

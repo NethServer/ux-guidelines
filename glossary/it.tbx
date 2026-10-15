@@ -136,6 +136,56 @@
 </tig>
 </langSet>
 </termEntry>
+<termEntry id="add-on--forbidden-servizio-aggiuntivo">
+<langSet xml:lang="en">
+<tig>
+<term>Add-on</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Servizio aggiuntivo</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="nethshop">
+<descrip>The Nethesis online shop, where add-ons are bought.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>NethShop</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="threat-shield">
+<descrip>A security service that blocks malicious IP addresses and domains using blocklists. The Nethesis blocklists require a subscription that includes the Threat Shield add-on.</descrip>
+<descrip type="Usage note">Its parts are &quot;Threat Shield IP&quot; and &quot;Threat Shield DNS&quot;.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Threat Shield</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="multiwan">
+<descrip>The NethSecurity feature that uses several internet connections together, for load balancing or failover.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>MultiWAN</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="flashstart">
+<descrip>A third-party cloud filter that blocks unwanted websites through DNS, integrated in NethSecurity.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>FlashStart</term>
+</tig>
+</langSet>
+</termEntry>
 <termEntry id="backup-destination">
 <descrip>A storage location where backups are saved.</descrip>
 <langSet xml:lang="en">
@@ -197,6 +247,43 @@
 <langSet xml:lang="en">
 <tig>
 <term>NethVoice</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="nethvoice-cti">
+<descrip>The NethVoice web app for users, to make and receive calls and manage contacts, call history and presence.</descrip>
+<descrip type="Usage note">Inside NethVoice, &quot;CTI&quot; alone is fine when the context is clear. The mobile app is called &quot;NethVoice&quot;, not &quot;NethCTI&quot;.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>NethVoice CTI</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="nethlink">
+<descrip>The NethVoice CTI desktop app. It shows call notifications even when the browser is closed and supports click-to-call.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>NethLink</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="webtop">
+<descrip>The groupware application for mail, calendars, contacts and shared documents, installed on NethServer 8.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>WebTop</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="nextcloud">
+<descrip>The third-party application for file sharing and collaboration, installed on NethServer 8.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Nextcloud</term>
 </tig>
 </langSet>
 </termEntry>
