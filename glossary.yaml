@@ -71,7 +71,7 @@
   en: Backup destination
   it: Destinazione di backup
   definition: A storage location where backups are saved.
-  products: [ns8, nethvoice]
+  products: [ns8]
   avoid:
     en: [Backup repository]
     it: [Repository di backup]
@@ -81,25 +81,44 @@
 - id: my-nethesis
   en: My Nethesis
   untranslatable: true
-  definition: The Nethesis administration portal, where systems are registered and managed.
+  definition: >-
+    The Nethesis administration portal, where systems are registered and managed.
+    "Nethesis administration portal" (in Italian "portale di amministrazione Nethesis")
+    is a valid synonym to refer to it indirectly.
   products: [all]
   avoid:
     en: [My]
-  notes: Always write the full name. "My" is only an informal short form, not used in user interfaces.
+  notes: Write "My Nethesis" in full. "My" is only an informal short form, not used in user interfaces.
 
 - id: nethserver
   en: NethServer
   untranslatable: true
-  definition: The Nethesis server platform.
+  definition: >-
+    The Nethesis open source server for small and medium businesses. From a web interface,
+    it installs and manages applications, such as mail, file sharing and NethVoice, on one
+    or more nodes.
   products: [all]
   avoid:
     en: [Nethserver, NS8]
   notes: 'Write the version in full: "NethServer 8", not "NS8".'
 
+- id: nethsecurity
+  en: NethSecurity
+  untranslatable: true
+  definition: >-
+    The Nethesis open source firewall for small and medium businesses, based on OpenWrt.
+    Its installations are called units, and many units can be managed from NethServer 8
+    with the NethSecurity controller.
+  products: [all]
+  avoid:
+    en: [Nethsecurity]
+
 - id: nethvoice
   en: NethVoice
   untranslatable: true
-  definition: The Nethesis phone system.
+  definition: >-
+    The Nethesis business phone system (VoIP PBX), installed as an application on
+    NethServer 8. It includes NethVoice CTI, the web app users make and receive calls with.
   products: [all]
   avoid:
     en: [Nethvoice]

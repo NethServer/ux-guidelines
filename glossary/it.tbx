@@ -163,8 +163,8 @@
 </langSet>
 </termEntry>
 <termEntry id="my-nethesis">
-<descrip>The Nethesis administration portal, where systems are registered and managed.</descrip>
-<descrip type="Usage note">Always write the full name. &quot;My&quot; is only an informal short form, not used in user interfaces.</descrip>
+<descrip>The Nethesis administration portal, where systems are registered and managed. &quot;Nethesis administration portal&quot; (in Italian &quot;portale di amministrazione Nethesis&quot;) is a valid synonym to refer to it indirectly.</descrip>
+<descrip type="Usage note">Write &quot;My Nethesis&quot; in full. &quot;My&quot; is only an informal short form, not used in user interfaces.</descrip>
 <descrip type="Translation needed">No</descrip>
 <langSet xml:lang="en">
 <tig>
@@ -173,7 +173,7 @@
 </langSet>
 </termEntry>
 <termEntry id="nethserver">
-<descrip>The Nethesis server platform.</descrip>
+<descrip>The Nethesis open source server for small and medium businesses. From a web interface, it installs and manages applications, such as mail, file sharing and NethVoice, on one or more nodes.</descrip>
 <descrip type="Usage note">Write the version in full: &quot;NethServer 8&quot;, not &quot;NS8&quot;.</descrip>
 <descrip type="Translation needed">No</descrip>
 <langSet xml:lang="en">
@@ -182,8 +182,17 @@
 </tig>
 </langSet>
 </termEntry>
+<termEntry id="nethsecurity">
+<descrip>The Nethesis open source firewall for small and medium businesses, based on OpenWrt. Its installations are called units, and many units can be managed from NethServer 8 with the NethSecurity controller.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>NethSecurity</term>
+</tig>
+</langSet>
+</termEntry>
 <termEntry id="nethvoice">
-<descrip>The Nethesis phone system.</descrip>
+<descrip>The Nethesis business phone system (VoIP PBX), installed as an application on NethServer 8. It includes NethVoice CTI, the web app users make and receive calls with.</descrip>
 <descrip type="Translation needed">No</descrip>
 <langSet xml:lang="en">
 <tig>
