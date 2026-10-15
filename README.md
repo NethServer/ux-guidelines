@@ -44,9 +44,12 @@ npm install
 npm run dev
 ```
 
-The dev server runs on http://localhost:5179. In development only, each glossary entry has a
-"Reviewed" checkbox and the list has a Review filter: the marks are saved in the browser and an
-entry edited after its review shows "Changed since review".
+The dev server runs on http://localhost:5179 and regenerates the glossary data whenever
+`glossary.yaml` is saved: validation errors appear in the terminal and in the browser.
+
+In development only, each glossary entry has a "Reviewed" checkbox and the list has a Review
+filter: the marks are saved in the browser and an entry edited after its review shows "Changed
+since review".
 
 `npm test` runs the security tests of the guidelines plugin. `npm run build` builds the page
 into `dist/`.
