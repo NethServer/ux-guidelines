@@ -53,10 +53,23 @@
 </termEntry>
 <termEntry id="system-secret">
 <descrip>The credential a system uses to connect to My Nethesis. It is shown only once, when it is generated.</descrip>
-<descrip type="Usage note">Example: &quot;my_0123456789abcdef0123.0123456789abcdef0123456789abcdef01234567&quot;.</descrip>
+<descrip type="Usage note">Example: &quot;my_0123456789abcdef0123.0123456789abcdef0123456789abcdef01234567&quot;. In Italian, use &quot;Segreto di sistema&quot; like &quot;Chiave di sistema&quot;; &quot;il segreto del sistema &lt;name&gt;&quot; is fine only for a specific system.</descrip>
 <langSet xml:lang="en">
 <tig>
 <term>System secret</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Segreto di sistema</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="system-secret--forbidden-segreto-del-sistema">
+<langSet xml:lang="en">
+<tig>
+<term>System secret</term>
+<termNote type="administrativeStatus">forbidden</termNote>
 </tig>
 </langSet>
 <langSet xml:lang="it">
@@ -106,6 +119,7 @@
 </termEntry>
 <termEntry id="subscription">
 <descrip>The plan of a registered system, such as Community or Enterprise.</descrip>
+<descrip type="Usage note">Do not call the subscription a &quot;registration&quot;. Registering a system, that is connecting it to My Nethesis, is fine: &quot;Register system&quot;.</descrip>
 <descrip type="Translation needed">No</descrip>
 <langSet xml:lang="en">
 <tig>
@@ -123,6 +137,19 @@
 <langSet xml:lang="it">
 <tig>
 <term>Abbonamento</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="subscription--forbidden-sottoscrizione">
+<langSet xml:lang="en">
+<tig>
+<term>Subscription</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Sottoscrizione</term>
 </tig>
 </langSet>
 </termEntry>
@@ -150,7 +177,7 @@
 </langSet>
 </termEntry>
 <termEntry id="nethshop">
-<descrip>The Nethesis online shop, where add-ons are bought.</descrip>
+<descrip>The Nethesis online shop for Nethesis products and services, such as add-ons, appliances and training.</descrip>
 <descrip type="Translation needed">No</descrip>
 <langSet xml:lang="en">
 <tig>
@@ -159,7 +186,7 @@
 </langSet>
 </termEntry>
 <termEntry id="threat-shield">
-<descrip>A security service that blocks malicious IP addresses and domains using blocklists. The Nethesis blocklists require a subscription that includes the Threat Shield add-on.</descrip>
+<descrip>A security service that blocks malicious IP addresses and domains using blocklists.</descrip>
 <descrip type="Usage note">Its parts are &quot;Threat Shield IP&quot; and &quot;Threat Shield DNS&quot;.</descrip>
 <descrip type="Translation needed">No</descrip>
 <langSet xml:lang="en">
@@ -183,6 +210,85 @@
 <langSet xml:lang="en">
 <tig>
 <term>FlashStart</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="sign-in">
+<descrip>Enter a product with your credentials.</descrip>
+<descrip type="Usage note">&quot;Login&quot; is fine as a noun or modifier: &quot;Login failed&quot;, &quot;last login&quot;, &quot;root login&quot;. Queue login in NethVoice is a different concept: agents &quot;log in to&quot; and &quot;log out of&quot; a queue.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Sign in</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Accedi</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="sign-in--forbidden-login">
+<langSet xml:lang="en">
+<tig>
+<term>Sign in</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Login</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="sign-in--forbidden-effettua-il-login">
+<langSet xml:lang="en">
+<tig>
+<term>Sign in</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Effettua il login</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="sign-out">
+<descrip>Leave a product and end your session.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Sign out</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Esci</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="sign-out--forbidden-disconnetti">
+<langSet xml:lang="en">
+<tig>
+<term>Sign out</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Disconnetti</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="sign-out--forbidden-logout">
+<langSet xml:lang="en">
+<tig>
+<term>Sign out</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Logout</term>
 </tig>
 </langSet>
 </termEntry>
@@ -224,7 +330,7 @@
 </termEntry>
 <termEntry id="nethserver">
 <descrip>The Nethesis open source server for small and medium businesses. From a web interface, it installs and manages applications, such as mail, file sharing and NethVoice, on one or more nodes.</descrip>
-<descrip type="Usage note">Write the version in full: &quot;NethServer 8&quot;, not &quot;NS8&quot;.</descrip>
+<descrip type="Usage note">&quot;NethServer 8&quot;, with the version, is also correct. Do not shorten it to &quot;NS8&quot;.</descrip>
 <descrip type="Translation needed">No</descrip>
 <langSet xml:lang="en">
 <tig>
@@ -242,7 +348,7 @@
 </langSet>
 </termEntry>
 <termEntry id="nethvoice">
-<descrip>The Nethesis business phone system (VoIP PBX), installed as an application on NethServer 8. It includes NethVoice CTI, the web app users make and receive calls with.</descrip>
+<descrip>The Nethesis business phone system (VoIP PBX), installed as an application on NethServer 8. It includes NethVoice CTI, the web app users make and receive calls with, NethLink, its desktop app, and a mobile app also called NethVoice.</descrip>
 <descrip type="Translation needed">No</descrip>
 <langSet xml:lang="en">
 <tig>
@@ -252,7 +358,7 @@
 </termEntry>
 <termEntry id="nethvoice-cti">
 <descrip>The NethVoice web app for users, to make and receive calls and manage contacts, call history and presence.</descrip>
-<descrip type="Usage note">Inside NethVoice, &quot;CTI&quot; alone is fine when the context is clear. The mobile app is called &quot;NethVoice&quot;, not &quot;NethCTI&quot;.</descrip>
+<descrip type="Usage note">Write the full name. Exception: inside NethVoice, &quot;CTI&quot; alone is fine when the context is clear. The mobile app is called &quot;NethVoice&quot;, not &quot;NethCTI&quot;.</descrip>
 <descrip type="Translation needed">No</descrip>
 <langSet xml:lang="en">
 <tig>

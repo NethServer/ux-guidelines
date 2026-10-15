@@ -40,13 +40,16 @@
 
 - id: system-secret
   en: System secret
-  it: Segreto del sistema
+  it: Segreto di sistema
   definition: The credential a system uses to connect to My Nethesis. It is shown only once, when it is generated.
   products: [my, ns8, nethsecurity]
   avoid:
     en: [System token, Registration token, Authentication token]
-    it: [Token di sistema, Token di registrazione, Token di autenticazione]
-  notes: 'Example: "my_0123456789abcdef0123.0123456789abcdef0123456789abcdef01234567".'
+    it: [Segreto del sistema, Token di sistema, Token di registrazione, Token di autenticazione]
+  notes: >-
+    Example: "my_0123456789abcdef0123.0123456789abcdef0123456789abcdef01234567". In Italian, use
+    "Segreto di sistema" like "Chiave di sistema"; "il segreto del sistema <name>" is fine only
+    for a specific system.
 
 - id: subscription
   en: Subscription
@@ -54,7 +57,11 @@
   definition: The plan of a registered system, such as Community or Enterprise.
   products: [all]
   avoid:
-    it: [Abbonamento]
+    en: [Registration]
+    it: [Abbonamento, Sottoscrizione]
+  notes: >-
+    Do not call the subscription a "registration". Registering a system, that is connecting it
+    to My Nethesis, is fine: "Register system".
 
 - id: add-on
   en: Add-on
@@ -69,7 +76,7 @@
 - id: nethshop
   en: NethShop
   untranslatable: true
-  definition: The Nethesis online shop, where add-ons are bought.
+  definition: The Nethesis online shop for Nethesis products and services, such as add-ons, appliances and training.
   products: [my]
   avoid:
     en: [Nethshop]
@@ -81,7 +88,6 @@
   untranslatable: true
   definition: >-
     A security service that blocks malicious IP addresses and domains using blocklists.
-    The Nethesis blocklists require a subscription that includes the Threat Shield add-on.
   products: [nethsecurity, ns8]
   avoid:
     en: [Threat shield, ThreatShield]
@@ -102,6 +108,29 @@
   products: [nethsecurity, my]
   avoid:
     en: [Flashstart]
+
+# Actions
+
+- id: sign-in
+  en: Sign in
+  it: Accedi
+  definition: Enter a product with your credentials.
+  products: [all]
+  avoid:
+    en: [Log in, Login, Signin]
+    it: [Login, Effettua il login]
+  notes: >-
+    "Login" is fine as a noun or modifier: "Login failed", "last login", "root login". Queue
+    login in NethVoice is a different concept: agents "log in to" and "log out of" a queue.
+
+- id: sign-out
+  en: Sign out
+  it: Esci
+  definition: Leave a product and end your session.
+  products: [all]
+  avoid:
+    en: [Log out, Logout, Log off]
+    it: [Disconnetti, Logout]
 
 # Backup
 
@@ -140,7 +169,7 @@
   products: [all]
   avoid:
     en: [Nethserver, NS8]
-  notes: 'Write the version in full: "NethServer 8", not "NS8".'
+  notes: '"NethServer 8", with the version, is also correct. Do not shorten it to "NS8".'
 
 - id: nethsecurity
   en: NethSecurity
@@ -151,14 +180,15 @@
     with the NethSecurity controller.
   products: [all]
   avoid:
-    en: [Nethsecurity]
+    en: [Nethsecurity, Nsec]
 
 - id: nethvoice
   en: NethVoice
   untranslatable: true
   definition: >-
     The Nethesis business phone system (VoIP PBX), installed as an application on
-    NethServer 8. It includes NethVoice CTI, the web app users make and receive calls with.
+    NethServer 8. It includes NethVoice CTI, the web app users make and receive calls with,
+    NethLink, its desktop app, and a mobile app also called NethVoice.
   products: [all]
   avoid:
     en: [Nethvoice]
@@ -169,10 +199,10 @@
   definition: The NethVoice web app for users, to make and receive calls and manage contacts, call history and presence.
   products: [nethvoice]
   avoid:
-    en: [NethCTI]
+    en: [NethCTI, CTI]
   notes: >-
-    Inside NethVoice, "CTI" alone is fine when the context is clear. The mobile app is called
-    "NethVoice", not "NethCTI".
+    Write the full name. Exception: inside NethVoice, "CTI" alone is fine when the context is
+    clear. The mobile app is called "NethVoice", not "NethCTI".
 
 - id: nethlink
   en: NethLink
