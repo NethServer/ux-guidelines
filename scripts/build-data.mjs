@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 // Validates glossary.yaml, then generates:
-//   - glossary/it.tbx            Weblate glossary (approved entries only)
+//   - glossary/it.tbx            Weblate glossary
 //   - src/generated/glossary.json   data for the web page
 //
 // guidelines.md is compiled by scripts/vite-plugin-guidelines.mjs.
@@ -19,8 +19,8 @@ import { slug } from './slug.mjs'
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const checkOnly = process.argv.includes('--check')
 
-const PRODUCTS = ['all', 'ns8', 'nethsecurity', 'nethvoice', 'nethvoice-cti', 'my']
-const STATUSES = ['approved', 'proposed', 'to-decide', 'deprecated']
+const PRODUCTS = ['all', 'ns8', 'nethsecurity', 'nethvoice', 'my']
+const FIELDS = ['id', 'en', 'it', 'untranslatable', 'definition', 'products', 'avoid', 'notes']
 const TARGET_LANGUAGES = ['it']
 
 const xml = (text) =>
@@ -55,8 +55,8 @@ for (const [index, entry] of entries.entries()) {
     errors.push(`${where}: an untranslatable entry cannot have an it translation`)
   }
   if (!entry.untranslatable && !entry.it) errors.push(`${where}: missing it`)
-  if (!STATUSES.includes(entry.status)) {
-    errors.push(`${where}: status must be one of ${STATUSES.join(', ')}`)
+  for (const field of Object.keys(entry)) {
+    if (!FIELDS.includes(field)) errors.push(`${where}: unknown field "${field}"`)
   }
   if (!Array.isArray(entry.products) || entry.products.length === 0) {
     errors.push(`${where}: products must be a non-empty list`)
@@ -87,7 +87,7 @@ if (errors.length) {
 function tbx(lang) {
   const body = []
 
-  for (const entry of entries.filter((e) => e.status === 'approved')) {
+  for (const entry of entries) {
     const notes = entry.notes ? `\n<descrip type="Usage note">${xml(entry.notes)}</descrip>` : ''
 
     if (entry.untranslatable) {
@@ -100,10 +100,8 @@ function tbx(lang) {
 </tig>
 </langSet>
 </termEntry>`)
-      continue
-    }
-
-    body.push(`<termEntry id="${entry.id}">
+    } else {
+      body.push(`<termEntry id="${entry.id}">
 <descrip>${xml(entry.definition)}</descrip>${notes}
 <langSet xml:lang="en">
 <tig>
@@ -116,8 +114,10 @@ function tbx(lang) {
 </tig>
 </langSet>
 </termEntry>`)
+    }
 
-    // each translation to avoid becomes a forbidden pair
+    // each translation to avoid becomes a forbidden pair, also for terms
+    // that stay in English
     for (const word of entry.avoid?.[lang] ?? []) {
       body.push(`<termEntry id="${entry.id}--forbidden-${slug(word)}">
 <langSet xml:lang="en">

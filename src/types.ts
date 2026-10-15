@@ -1,8 +1,7 @@
 //  Copyright (C) 2026 Nethesis S.r.l.
 //  SPDX-License-Identifier: GPL-3.0-or-later
 
-export type Product = 'all' | 'ns8' | 'nethsecurity' | 'nethvoice' | 'nethvoice-cti' | 'my'
-export type Status = 'approved' | 'proposed' | 'to-decide' | 'deprecated'
+export type Product = 'all' | 'ns8' | 'nethsecurity' | 'nethvoice' | 'my'
 
 export type GlossaryEntry = {
   id: string
@@ -12,23 +11,14 @@ export type GlossaryEntry = {
   definition: string
   products: Product[]
   avoid?: { en?: string[]; it?: string[] }
-  status: Status
   notes?: string
 }
 
 export const PRODUCT_LABELS: Record<Product, string> = {
   all: 'All products',
-  ns8: 'NS8',
+  ns8: 'NethServer 8',
   nethsecurity: 'NethSecurity',
   nethvoice: 'NethVoice',
-  'nethvoice-cti': 'NethVoice CTI',
-  my: 'My'
-}
-
-export const STATUS_LABELS: Record<Status, string> = {
-  approved: 'Approved',
-  proposed: 'Proposed',
-  'to-decide': 'To decide',
-  deprecated: 'Deprecated'
+  my: 'My Nethesis'
 }
 

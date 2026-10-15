@@ -1,7 +1,7 @@
 # Nethesis UX writing guide
 
-How to write the user interfaces of Nethesis products (NS8, NethSecurity, NethVoice, NethVoice
-CTI and My): style rules, and the glossary of terms with their Italian translations.
+How to write the user interfaces of Nethesis products (NethServer 8, NethSecurity, NethVoice and
+My Nethesis): style rules, and the glossary of terms with their Italian translations.
 
 ## Files
 
@@ -22,8 +22,8 @@ CTI and My): style rules, and the glossary of terms with their Italian translati
    are not up to date.
 4. On merge, CI publishes the page and Weblate reads the new `glossary/it.tbx`.
 
-Only entries with `status: approved` are exported to Weblate. Translations listed under
-`avoid.it` become forbidden translations.
+`glossary.yaml` contains approved terms only: every entry is exported to Weblate, so add a term
+once it has been agreed. Translations listed under `avoid.it` become forbidden translations.
 
 ## Weblate
 

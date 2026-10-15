@@ -3,102 +3,69 @@
 # Edit this file through pull requests only. `npm run build:data` generates
 # glossary/it.tbx (read by Weblate) and the data used by the web page.
 #
+# Add a term only once it has been agreed: every entry is exported to Weblate.
+#
 # Fields:
 #   id              unique slug, used for links (#term-<id>) and TBX entry ids
 #   en              preferred English term
 #   it              preferred Italian translation (omit when untranslatable)
 #   untranslatable  true when the term stays in English in every language
 #   definition      one sentence, user oriented
-#   products        all | ns8 | nethsecurity | nethvoice | nethvoice-cti | my
+#   products        all | ns8 | nethsecurity | nethvoice | my
 #   avoid.en        English words not to use for this concept
 #   avoid.it        Italian translations not to use (forbidden on Weblate)
-#   status          approved | proposed | to-decide | deprecated
 #   notes           optional usage notes
 #
-# Only `approved` entries are exported to Weblate.
+# Example:
+#
+# - id: delete
+#   en: Delete
+#   it: Elimina
+#   definition: Permanently destroy an object.
+#   products: [all]
+#   avoid:
+#     it: [Cancella]
 
-# Objects
+# Systems and subscriptions
 
-- id: application
-  en: Application
-  it: Applicazione
-  definition: Software that can be installed on an NS8 cluster, such as Mail or Nextcloud.
-  products: [ns8, nethvoice, my]
+- id: system-key
+  en: System key
+  it: Chiave di sistema
+  definition: The public identifier of a system registered on My Nethesis.
+  products: [my, ns8, nethsecurity]
   avoid:
-    en: [Module]
-    it: [Modulo]
-  status: to-decide
-  notes: Decide whether labels use "Application" or "App". "Module" belongs to technical documentation only.
+    en: [System ID]
+    it: [Chiave sistema, ID sistema]
+  notes: 'Example: "NETH-1234-5678-9ABC-DEF0-1234-5678-9ABC-DEF0".'
 
-- id: instance
-  en: Instance
-  it: Istanza
-  definition: A single installed copy of an application, such as mail1.
-  products: [ns8]
+- id: system-secret
+  en: System secret
+  it: Segreto del sistema
+  definition: The credential a system uses to connect to My Nethesis. It is shown only once, when it is generated.
+  products: [my, ns8, nethsecurity]
   avoid:
-    en: [Module]
-  status: proposed
+    en: [System token, Registration token, Authentication token]
+    it: [Token di sistema, Token di registrazione, Token di autenticazione]
+  notes: 'Example: "my_0123456789abcdef0123.0123456789abcdef0123456789abcdef01234567".'
 
-- id: cluster
-  en: Cluster
+- id: subscription
+  en: Subscription
   untranslatable: true
-  definition: A group of NS8 nodes managed from a single user interface.
-  products: [ns8, nethvoice]
-  status: proposed
-
-- id: node
-  en: Node
-  it: Nodo
-  definition: A physical or virtual server that is part of an NS8 cluster.
-  products: [ns8, nethvoice]
+  definition: The plan of a registered system, such as Community or Enterprise.
+  products: [all]
   avoid:
-    en: [Server, Host, Machine]
-  status: proposed
+    it: [Abbonamento]
 
-- id: leader-node
-  en: Leader node
-  it: Nodo leader
-  definition: The node that coordinates the cluster.
-  products: [ns8]
+- id: add-on
+  en: Add-on
+  untranslatable: true
+  definition: An optional feature bought on NethShop and granted to a system, such as Threat Shield.
+  products: [all]
   avoid:
-    it: [Nodo Leader]
-  status: proposed
+    en: [Entitlement]
+  notes: 'The Italian plural does not change: "gli add-on".'
 
-- id: worker-node
-  en: Worker node
-  it: Nodo worker
-  definition: Any node of the cluster other than the leader.
-  products: [ns8]
-  avoid:
-    en: [Worker Node]
-    it: [Nodo Worker]
-  status: proposed
-
-- id: unit
-  en: Unit
-  it: Unità
-  definition: A NethSecurity firewall managed by a controller.
-  products: [nethsecurity]
-  avoid:
-    en: [Device, Machine]
-  status: proposed
-
-- id: system
-  en: System
-  it: Sistema
-  definition: An NS8 or NethSecurity installation registered on My.
-  products: [my]
-  status: to-decide
-  notes: Decide how "System" maps to "Cluster", "Node" and "Unit" across products.
-
-- id: user-domain
-  en: User domain
-  it: Dominio utente
-  definition: A database of users and groups, LDAP or Active Directory, used by applications.
-  products: [ns8]
-  avoid:
-    en: [Realm]
-  status: proposed
+# Backup
 
 - id: backup-destination
   en: Backup destination
@@ -108,240 +75,31 @@
   avoid:
     en: [Backup repository]
     it: [Repository di backup]
-  status: to-decide
-  notes: NS8 core already uses "Backup destination"; module permission labels still use "backup repository".
 
-- id: extension
-  en: Extension
-  it: Interno
-  definition: The internal phone number of a user.
-  products: [nethvoice, nethvoice-cti]
-  avoid:
-    it: [Estensione]
-  status: proposed
+# Product names
 
-- id: company
-  en: Company
-  it: Azienda
-  definition: An organization in the My sales hierarchy, or the company of a phonebook contact.
-  products: [my, nethvoice-cti]
-  status: proposed
-
-- id: customer
-  en: Customer
-  it: Cliente
-  definition: The end customer level of the My sales hierarchy.
-  products: [my, nethvoice-cti]
-  status: proposed
-
-- id: reseller
-  en: Reseller
-  it: Rivenditore
-  definition: The reseller level of the My sales hierarchy.
-  products: [my]
-  status: proposed
-
-- id: distributor
-  en: Distributor
-  it: Distributore
-  definition: The distributor level of the My sales hierarchy.
-  products: [my]
-  status: proposed
-
-- id: administrator
-  en: Administrator
-  it: Amministratore
-  definition: A user with full privileges.
-  products: [all]
-  avoid:
-    en: [Admin]
-  status: proposed
-  notes: '"admin" is fine when it is the actual username.'
-
-- id: username
-  en: Username
-  it: Nome utente
-  definition: The name a user logs in with.
-  products: [all]
-  avoid:
-    en: [User name]
-    it: [Utente, Username]
-  status: proposed
-
-- id: display-name
-  en: Display name
-  it: Nome visualizzato
-  definition: The name shown to other users.
-  products: [all]
-  avoid:
-    it: [Display name]
-  status: proposed
-
-# Actions
-
-- id: create
-  en: Create
-  it: Crea
-  definition: Make a new object.
-  products: [all]
-  avoid:
-    en: [New]
-  status: proposed
-  notes: 'Use "Create <object>", for example "Create user".'
-
-- id: add
-  en: Add
-  it: Aggiungi
-  definition: Associate an object that already exists, for example add a user to a group.
-  products: [all]
-  status: proposed
-
-- id: edit
-  en: Edit
-  it: Modifica
-  definition: Change the data of an object.
-  products: [all]
-  avoid:
-    en: [Modify]
-  status: proposed
-
-- id: delete
-  en: Delete
-  it: Elimina
-  definition: Permanently destroy an object.
-  products: [all]
-  avoid:
-    it: [Cancella]
-  status: proposed
-
-- id: remove
-  en: Remove
-  it: Rimuovi
-  definition: Take an object out of a list or an association without destroying it.
-  products: [all]
-  status: proposed
-
-- id: uninstall
-  en: Uninstall
-  it: Disinstalla
-  definition: Remove an application instance from the cluster.
-  products: [ns8]
-  avoid:
-    en: [Delete, Remove]
-  status: proposed
-
-- id: destroy
-  en: Destroy
-  it: Distruggi
-  definition: Permanently delete an organization and everything associated with it.
-  products: [my]
-  status: to-decide
-  notes: Today "Destroy" is translated as "Elimina", like "Delete", so Italian users cannot tell them apart.
-
-- id: log-in
-  en: Log in
-  it: Accedi
-  definition: Enter the user interface with valid credentials.
-  products: [all]
-  avoid:
-    en: [Sign in]
-    it: [Login]
-  status: proposed
-
-- id: log-out
-  en: Log out
-  it: Esci
-  definition: Leave the user interface.
-  products: [all]
-  avoid:
-    en: [Sign out]
-    it: [Disconnetti, Logout]
-  status: proposed
-
-- id: reset-filters
-  en: Reset filters
-  it: Reimposta filtri
-  definition: Bring all filters of a list back to their default values.
-  products: [all]
-  avoid:
-    it: [Ripristina filtri]
-  status: proposed
-  notes: Used by the Table page and Empty state patterns.
-
-- id: clear
-  en: Clear
-  it: Cancella
-  definition: Empty a search field or a selection.
-  products: [all]
-  status: to-decide
-  notes: Products use Pulisci, Svuota, Azzera and Cancella. The vue-components patterns use "Cancella" for a search and "Azzera selezione" for a selection.
-
-# Settings and states
-
-- id: settings
-  en: Settings
-  it: Impostazioni
-  definition: A page or section with options the user can change.
-  products: [all]
-  avoid:
-    en: [Preferences]
-    it: [Configurazione, Preferenze]
-  status: proposed
-
-- id: enabled
-  en: Enabled
-  it: Abilitato
-  definition: The state of a feature that is turned on.
-  products: [all]
-  avoid:
-    it: [Attivato]
-  status: proposed
-
-- id: disabled
-  en: Disabled
-  it: Disabilitato
-  definition: The state of a feature that is turned off.
-  products: [all]
-  avoid:
-    it: [Disattivato]
-  status: proposed
-
-- id: required
-  en: Required
-  it: Obbligatorio
-  definition: A field that must be filled in.
-  products: [all]
-  avoid:
-    it: [Richiesto, Necessario]
-  status: proposed
-
-# Terms that stay in English
-
-- id: backup
-  en: Backup
+- id: my-nethesis
+  en: My Nethesis
   untranslatable: true
-  definition: A copy of data that can be restored later.
+  definition: The Nethesis administration portal, where systems are registered and managed.
   products: [all]
-  status: proposed
+  avoid:
+    en: [My]
+  notes: Always write the full name. "My" is only an informal short form, not used in user interfaces.
 
-- id: dashboard
-  en: Dashboard
+- id: nethserver
+  en: NethServer
   untranslatable: true
-  definition: The overview page of a product.
+  definition: The Nethesis server platform.
   products: [all]
-  status: proposed
-  notes: 'Capitalize it when it names the page ("Go to Dashboard", "Vai alla Dashboard"), not when it is a common noun ("the dashboard shows...").'
+  avoid:
+    en: [Nethserver, NS8]
+  notes: 'Write the version in full: "NethServer 8", not "NS8".'
 
-- id: firewall
-  en: Firewall
+- id: nethvoice
+  en: NethVoice
   untranslatable: true
-  definition: A system that filters network traffic.
-  products: [nethsecurity, ns8]
-  status: proposed
-
-- id: password
-  en: Password
-  untranslatable: true
-  definition: The secret a user logs in with.
+  definition: The Nethesis phone system.
   products: [all]
-  status: proposed
+  avoid:
+    en: [Nethvoice]

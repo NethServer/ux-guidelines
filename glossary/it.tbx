@@ -11,7 +11,186 @@
 </martifHeader>
 <text>
 <body>
-
+<termEntry id="system-key">
+<descrip>The public identifier of a system registered on My Nethesis.</descrip>
+<descrip type="Usage note">Example: &quot;NETH-1234-5678-9ABC-DEF0-1234-5678-9ABC-DEF0&quot;.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>System key</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Chiave di sistema</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="system-key--forbidden-chiave-sistema">
+<langSet xml:lang="en">
+<tig>
+<term>System key</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Chiave sistema</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="system-key--forbidden-id-sistema">
+<langSet xml:lang="en">
+<tig>
+<term>System key</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>ID sistema</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="system-secret">
+<descrip>The credential a system uses to connect to My Nethesis. It is shown only once, when it is generated.</descrip>
+<descrip type="Usage note">Example: &quot;my_0123456789abcdef0123.0123456789abcdef0123456789abcdef01234567&quot;.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>System secret</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Segreto del sistema</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="system-secret--forbidden-token-di-sistema">
+<langSet xml:lang="en">
+<tig>
+<term>System secret</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Token di sistema</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="system-secret--forbidden-token-di-registrazione">
+<langSet xml:lang="en">
+<tig>
+<term>System secret</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Token di registrazione</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="system-secret--forbidden-token-di-autenticazione">
+<langSet xml:lang="en">
+<tig>
+<term>System secret</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Token di autenticazione</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="subscription">
+<descrip>The plan of a registered system, such as Community or Enterprise.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Subscription</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="subscription--forbidden-abbonamento">
+<langSet xml:lang="en">
+<tig>
+<term>Subscription</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Abbonamento</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="add-on">
+<descrip>An optional feature bought on NethShop and granted to a system, such as Threat Shield.</descrip>
+<descrip type="Usage note">The Italian plural does not change: &quot;gli add-on&quot;.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Add-on</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="backup-destination">
+<descrip>A storage location where backups are saved.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Backup destination</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Destinazione di backup</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="backup-destination--forbidden-repository-di-backup">
+<langSet xml:lang="en">
+<tig>
+<term>Backup destination</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Repository di backup</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="my-nethesis">
+<descrip>The Nethesis administration portal, where systems are registered and managed.</descrip>
+<descrip type="Usage note">Always write the full name. &quot;My&quot; is only an informal short form, not used in user interfaces.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>My Nethesis</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="nethserver">
+<descrip>The Nethesis server platform.</descrip>
+<descrip type="Usage note">Write the version in full: &quot;NethServer 8&quot;, not &quot;NS8&quot;.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>NethServer</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="nethvoice">
+<descrip>The Nethesis phone system.</descrip>
+<descrip type="Translation needed">No</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>NethVoice</term>
+</tig>
+</langSet>
+</termEntry>
 </body>
 </text>
 </martif>
