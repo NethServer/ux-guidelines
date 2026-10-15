@@ -7,5 +7,8 @@ export default defineConfig({
   // relative base: the site is served from https://<org>.github.io/ux-writing-guide/
   base: './',
   // guidelines.md becomes a Vue component, see scripts/vite-plugin-guidelines.mjs
-  plugins: [guidelines(), vue({ include: [/\.vue$/, GUIDELINES_PATH] }), tailwindcss()]
+  plugins: [guidelines(), vue({ include: [/\.vue$/, GUIDELINES_PATH] }), tailwindcss()],
+  // a fixed port: review marks are saved per origin (src/composables/useReview.ts),
+  // so the dev server fails rather than moving to another port
+  server: { port: 5179, strictPort: true }
 })

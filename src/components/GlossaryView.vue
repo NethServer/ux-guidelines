@@ -7,6 +7,7 @@
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import {
   NeButton,
+  NeCheckbox,
   NeDropdownFilterV2,
   NeEmptyState,
   NeTable,
@@ -28,6 +29,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import glossary from '../generated/glossary.json'
 import { PRODUCT_LABELS, type GlossaryEntry, type Product } from '../types'
+import { REVIEW_LABELS, useReview, type ReviewState } from '../composables/useReview'
 
 const entries = [...(glossary as GlossaryEntry[])].sort((a, b) => a.en.localeCompare(b.en))
 
@@ -37,19 +39,31 @@ const productOptions: NeDropdownFilterV2Option[] = (
   .filter((product) => product !== 'all')
   .map((product) => ({ id: product, label: PRODUCT_LABELS[product] }))
 
+// review marks, in development only: see composables/useReview.ts
+const review = useReview()
+
+const reviewOptions: NeDropdownFilterV2Option[] = (
+  Object.keys(REVIEW_LABELS) as ReviewState[]
+).map((state) => ({ id: state, label: REVIEW_LABELS[state] }))
+
 // filters are kept in the query string, so a filtered view can be shared
 const params = new URLSearchParams(window.location.search)
 const textFilter = ref(params.get('q') ?? '')
 const productFilter = ref(
   productOptions.filter((o) => params.getAll('product').includes(o.id))
 )
+const reviewFilter = ref(
+  review.enabled ? reviewOptions.filter((o) => params.getAll('review').includes(o.id)) : []
+)
 
-watch([textFilter, productFilter], () => {
+watch([textFilter, productFilter, reviewFilter], () => {
   const url = new URL(window.location.href)
   url.searchParams.delete('q')
   url.searchParams.delete('product')
+  url.searchParams.delete('review')
   if (textFilter.value) url.searchParams.set('q', textFilter.value)
   productFilter.value.forEach((o) => url.searchParams.append('product', o.id))
+  reviewFilter.value.forEach((o) => url.searchParams.append('review', o.id))
   window.history.replaceState(null, '', url)
 })
 
@@ -75,24 +89,31 @@ const searchText = (entry: GlossaryEntry) =>
 const filteredEntries = computed(() => {
   const query = normalize(textFilter.value.trim())
   const products = productFilter.value.map((o) => o.id)
+  const reviewStates = reviewFilter.value.map((o) => o.id)
 
   return entries.filter(
     (entry) =>
       (!query || searchText(entry).includes(query)) &&
       (!products.length ||
         entry.products.includes('all') ||
-        entry.products.some((p) => products.includes(p)))
+        entry.products.some((p) => products.includes(p))) &&
+      (!reviewStates.length || reviewStates.includes(review.reviewState(entry)))
   )
 })
 
 const isFiltered = computed(
-  () => !!textFilter.value || !!productFilter.value.length
+  () => !!textFilter.value || !!productFilter.value.length || !!reviewFilter.value.length
 )
 
 function resetFilters() {
   textFilter.value = ''
   productFilter.value = []
+  reviewFilter.value = []
 }
+
+const reviewedCount = computed(
+  () => entries.filter((entry) => review.reviewState(entry) === 'reviewed').length
+)
 
 const productsText = (entry: GlossaryEntry) =>
   entry.products.map((product) => PRODUCT_LABELS[product]).join(', ')
@@ -168,7 +189,22 @@ onMounted(async () => {
           more-options-hidden-label="Continue typing to show more options"
           clear-search-label="Clear"
         />
+        <NeDropdownFilterV2
+          v-if="review.enabled"
+          v-model="reviewFilter"
+          kind="checkbox"
+          label="Review"
+          :options="reviewOptions"
+          clear-filter-label="Clear selection"
+          open-menu-aria-label="Open filter"
+          no-options-label="No options"
+          more-options-hidden-label="Continue typing to show more options"
+          clear-search-label="Clear"
+        />
         <NeButton v-if="isFiltered" kind="tertiary" @click="resetFilters">Reset filters</NeButton>
+        <span v-if="review.enabled" class="text-sm text-gray-500 dark:text-gray-400 lg:ml-auto">
+          {{ reviewedCount }} of {{ entries.length }} reviewed
+        </span>
       </div>
       <NeEmptyState
         v-if="!filteredEntries.length"
@@ -212,6 +248,20 @@ onMounted(async () => {
                     {{ copiedId === entry.id ? 'Link copied' : `Copy link to ${entry.en}` }}
                   </span>
                 </NeButton>
+              </div>
+              <div v-if="review.enabled" class="mt-2">
+                <NeCheckbox
+                  :id="`review-${entry.id}`"
+                  :model-value="review.reviewState(entry) === 'reviewed'"
+                  label="Reviewed"
+                  @update:model-value="review.setReviewed(entry, $event)"
+                />
+                <p
+                  v-if="review.reviewState(entry) === 'changed'"
+                  class="mt-1 text-xs text-amber-700 dark:text-amber-500"
+                >
+                  Changed since review
+                </p>
               </div>
             </NeTableCell>
             <NeTableCell data-label="Italian">
