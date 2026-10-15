@@ -118,7 +118,7 @@ From the *New password form* pattern.
 
 - Use the informal imperative (*tu*): `Inserisci`, `Seleziona`, `Controlla`. Don't use the infinitive (`Inserire`) or the formal form (`Inserisca`).
 - Keep the English capitalization: sentence case. Write the name of a page, menu item or tab exactly as its Italian label: `Vai alla Dashboard`, `Vai alle Impostazioni`. Translate **Go to** as *Vai a* and **Open** as *Apri*.
-- Don't translate the terms marked *untranslatable* in the glossary. Translate everything else, including `Download` (`Scarica`) and `Upload` (`Carica`).
+- Don't translate the terms marked *Keep in English* in the glossary. Translate everything else, including `Download` (`Scarica`) and `Upload` (`Carica`).
 - Patterns to reuse:
 
 | English | Italian |

@@ -265,8 +265,8 @@ onMounted(async () => {
               </div>
             </NeTableCell>
             <NeTableCell data-label="Italian">
-              <span v-if="entry.untranslatable" class="text-gray-500 dark:text-gray-400">
-                Not translated
+              <span v-if="entry.untranslatable" class="text-gray-500 italic dark:text-gray-400">
+                Keep in English
               </span>
               <template v-else>{{ entry.it }}</template>
             </NeTableCell>
