@@ -64,6 +64,29 @@ From the *Table page* pattern.
 - Primary action on the right: `Create <object>`.
 - Text filter placeholder: `Filter <objects>`.
 
+## Table filters
+
+From the *Table page* pattern and My Nethesis. A table can have a text filter and some dropdown
+filters. A filter can have a default value: for example, a status filter that shows only the
+active users when the page opens.
+
+- **Reset** brings filters back to their default values. Use it in every case except the one
+  below, even when all the defaults are empty.
+- **Clear** empties a selection. Use it only inside a single dropdown filter that has nothing
+  selected by default: there, resetting means emptying, and "Clear" says it better.
+
+| Action | Label | Italian |
+| --- | --- | --- |
+| All the filters of a table, from the toolbar or the empty state | Reset filters | Reimposta filtri |
+| One dropdown filter that has a default selection | Reset selection | Reimposta selezione |
+| One dropdown filter that has nothing selected by default | Clear selection | Azzera selezione |
+| The clear button of the text filter (screen readers only) | Clear search | Azzera ricerca |
+
+| Do | Don't |
+| --- | --- |
+| Reset filters | Clear filters |
+| Reset selection, for a status filter with a default | Clear selection |
+
 ## Empty states
 
 From the *Empty state* pattern. Pick the case that matches the situation.
