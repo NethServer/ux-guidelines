@@ -273,7 +273,7 @@ onMounted(async () => {
             <NeTableCell data-label="Definition">
               <div class="max-w-md whitespace-normal">
                 {{ entry.definition }}
-                <p v-if="entry.notes" class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                <p v-if="entry.notes" class="mt-1 text-gray-500 dark:text-gray-400">
                   {{ entry.notes }}
                 </p>
               </div>
