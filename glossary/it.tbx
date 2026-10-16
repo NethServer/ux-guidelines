@@ -213,6 +213,221 @@
 </tig>
 </langSet>
 </termEntry>
+<termEntry id="create">
+<descrip>Make a new object.</descrip>
+<descrip type="Usage note">Name the object: &quot;Create user&quot;.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Create</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Crea</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="add">
+<descrip>Associate an object that already exists, for example add a user to a group.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Add</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Aggiungi</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="edit">
+<descrip>Change the data of an object.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Edit</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Modifica</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="delete">
+<descrip>Permanently destroy an object.</descrip>
+<descrip type="Usage note">Use Remove when the object is not destroyed.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Delete</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Elimina</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="delete--forbidden-cancella">
+<langSet xml:lang="en">
+<tig>
+<term>Delete</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Cancella</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="remove">
+<descrip>Take an object out of a list or an association without destroying it.</descrip>
+<descrip type="Usage note">Use Delete when the object is destroyed.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Remove</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Rimuovi</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="enable">
+<descrip>Turn on a feature or an option.</descrip>
+<descrip type="Usage note">The resulting state is &quot;Enabled&quot; (&quot;Abilitato&quot;, not &quot;Attivato&quot;).</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Enable</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Abilita</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="enable--forbidden-attiva">
+<langSet xml:lang="en">
+<tig>
+<term>Enable</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Attiva</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="disable">
+<descrip>Turn off a feature or an option.</descrip>
+<descrip type="Usage note">The resulting state is &quot;Disabled&quot; (&quot;Disabilitato&quot;, not &quot;Disattivato&quot;).</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Disable</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Disabilita</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="disable--forbidden-disattiva">
+<langSet xml:lang="en">
+<tig>
+<term>Disable</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Disattiva</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="clear">
+<descrip>Empty a search field, a selection or a filter.</descrip>
+<descrip type="Usage note">Clear empties values; Reset brings them back to their defaults. For filters, use &quot;Clear selection&quot; (&quot;Azzera selezione&quot;) only inside a single dropdown filter that has nothing selected by default, and Reset in every other case: see the Table filters guidelines. The clear button of a search field is &quot;Clear search&quot; (&quot;Azzera ricerca&quot;).</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Clear</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Azzera</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="clear--forbidden-pulisci">
+<langSet xml:lang="en">
+<tig>
+<term>Clear</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Pulisci</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="clear--forbidden-svuota">
+<langSet xml:lang="en">
+<tig>
+<term>Clear</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Svuota</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="clear--forbidden-cancella">
+<langSet xml:lang="en">
+<tig>
+<term>Clear</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Cancella</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="reset">
+<descrip>Bring values back to their defaults, for example the filters of a list.</descrip>
+<descrip type="Usage note">&quot;Reset filters&quot; (&quot;Reimposta filtri&quot;), &quot;Reset selection&quot; (&quot;Reimposta selezione&quot;), &quot;Reset password&quot; (&quot;Reimposta password&quot;). In Italian, &quot;Ripristina&quot; is for restoring a backup.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Reset</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Reimposta</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="reset--forbidden-ripristina">
+<langSet xml:lang="en">
+<tig>
+<term>Reset</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Ripristina</term>
+</tig>
+</langSet>
+</termEntry>
 <termEntry id="sign-in">
 <descrip>Enter a product with your credentials.</descrip>
 <descrip type="Usage note">&quot;Login&quot; is fine as a noun or modifier: &quot;Login failed&quot;, &quot;last login&quot;, &quot;root login&quot;. Queue login in NethVoice is a different concept: agents &quot;log in to&quot; and &quot;log out of&quot; a queue.</descrip>

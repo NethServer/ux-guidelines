@@ -111,6 +111,89 @@
 
 # Actions
 
+- id: create
+  en: Create
+  it: Crea
+  definition: Make a new object.
+  products: [all]
+  avoid:
+    en: [New]
+  notes: 'Name the object: "Create user".'
+
+- id: add
+  en: Add
+  it: Aggiungi
+  definition: Associate an object that already exists, for example add a user to a group.
+  products: [all]
+
+- id: edit
+  en: Edit
+  it: Modifica
+  definition: Change the data of an object.
+  products: [all]
+  avoid:
+    en: [Modify]
+
+- id: delete
+  en: Delete
+  it: Elimina
+  definition: Permanently destroy an object.
+  products: [all]
+  avoid:
+    it: [Cancella]
+  notes: Use Remove when the object is not destroyed.
+
+- id: remove
+  en: Remove
+  it: Rimuovi
+  definition: Take an object out of a list or an association without destroying it.
+  products: [all]
+  notes: Use Delete when the object is destroyed.
+
+- id: enable
+  en: Enable
+  it: Abilita
+  definition: Turn on a feature or an option.
+  products: [all]
+  avoid:
+    en: [Activate]
+    it: [Attiva]
+  notes: 'The resulting state is "Enabled" ("Abilitato", not "Attivato").'
+
+- id: disable
+  en: Disable
+  it: Disabilita
+  definition: Turn off a feature or an option.
+  products: [all]
+  avoid:
+    en: [Deactivate]
+    it: [Disattiva]
+  notes: 'The resulting state is "Disabled" ("Disabilitato", not "Disattivato").'
+
+- id: clear
+  en: Clear
+  it: Azzera
+  definition: Empty a search field, a selection or a filter.
+  products: [all]
+  avoid:
+    it: [Pulisci, Svuota, Cancella]
+  notes: >-
+    Clear empties values; Reset brings them back to their defaults. For filters, use "Clear
+    selection" ("Azzera selezione") only inside a single dropdown filter that has nothing
+    selected by default, and Reset in every other case: see the Table filters guidelines. The
+    clear button of a search field is "Clear search" ("Azzera ricerca").
+
+- id: reset
+  en: Reset
+  it: Reimposta
+  definition: Bring values back to their defaults, for example the filters of a list.
+  products: [all]
+  avoid:
+    it: [Ripristina]
+  notes: >-
+    "Reset filters" ("Reimposta filtri"), "Reset selection" ("Reimposta selezione"), "Reset
+    password" ("Reimposta password"). In Italian, "Ripristina" is for restoring a backup.
+
 - id: sign-in
   en: Sign in
   it: Accedi
