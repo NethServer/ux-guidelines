@@ -214,8 +214,8 @@
 </langSet>
 </termEntry>
 <termEntry id="create">
-<descrip>Make a new object.</descrip>
-<descrip type="Usage note">Name the object: &quot;Create user&quot;.</descrip>
+<descrip>Make a new object that did not exist before, such as a user, a group or a firewall rule.</descrip>
+<descrip type="Usage note">Name the object: &quot;Create user&quot;. Use &quot;Add&quot; when the object already exists and is only associated with another one.</descrip>
 <langSet xml:lang="en">
 <tig>
 <term>Create</term>
@@ -229,6 +229,7 @@
 </termEntry>
 <termEntry id="add">
 <descrip>Associate an object that already exists, for example add a user to a group.</descrip>
+<descrip type="Usage note">Use &quot;Create&quot; when the object does not exist yet and is made from scratch.</descrip>
 <langSet xml:lang="en">
 <tig>
 <term>Add</term>
@@ -254,8 +255,8 @@
 </langSet>
 </termEntry>
 <termEntry id="delete">
-<descrip>Permanently destroy an object.</descrip>
-<descrip type="Usage note">Use Remove when the object is not destroyed.</descrip>
+<descrip>Permanently destroy an object, such as a contact, a firewall rule or a user.</descrip>
+<descrip type="Usage note">Use &quot;Remove&quot; when the object only leaves a list or an association and still exists, for example a user removed from a group. For applications, use &quot;Uninstall&quot;. When the deletion destroys data or many objects, ask for confirmation first: see Delete confirmation in the guidelines.</descrip>
 <langSet xml:lang="en">
 <tig>
 <term>Delete</term>
@@ -280,12 +281,78 @@
 </tig>
 </langSet>
 </termEntry>
+<termEntry id="delete--forbidden-rimuovi">
+<langSet xml:lang="en">
+<tig>
+<term>Delete</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Rimuovi</term>
+</tig>
+</langSet>
+</termEntry>
 <termEntry id="remove">
-<descrip>Take an object out of a list or an association without destroying it.</descrip>
-<descrip type="Usage note">Use Delete when the object is destroyed.</descrip>
+<descrip>Take an object out of a list or an association without destroying it, for example remove a user from a group.</descrip>
+<descrip type="Usage note">Use &quot;Delete&quot; when the object is destroyed.</descrip>
 <langSet xml:lang="en">
 <tig>
 <term>Remove</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Rimuovi</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="remove--forbidden-elimina">
+<langSet xml:lang="en">
+<tig>
+<term>Remove</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Elimina</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="uninstall">
+<descrip>Remove an application, with its data, from NethServer 8.</descrip>
+<descrip type="Usage note">Name the application: &quot;Uninstall mail1&quot;.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Uninstall</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Disinstalla</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="uninstall--forbidden-elimina">
+<langSet xml:lang="en">
+<tig>
+<term>Uninstall</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Elimina</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="uninstall--forbidden-rimuovi">
+<langSet xml:lang="en">
+<tig>
+<term>Uninstall</term>
+<termNote type="administrativeStatus">forbidden</termNote>
 </tig>
 </langSet>
 <langSet xml:lang="it">
@@ -350,7 +417,7 @@
 </termEntry>
 <termEntry id="clear">
 <descrip>Empty a search field, a selection or a filter.</descrip>
-<descrip type="Usage note">Clear empties values; Reset brings them back to their defaults. For filters, use &quot;Clear selection&quot; (&quot;Azzera selezione&quot;) only inside a single dropdown filter that has nothing selected by default, and Reset in every other case: see the Table filters guidelines. The clear button of a search field is &quot;Clear search&quot; (&quot;Azzera ricerca&quot;).</descrip>
+<descrip type="Usage note">&quot;Clear&quot; empties values; &quot;Reset&quot; brings them back to their defaults. For filters, use &quot;Clear selection&quot; (&quot;Azzera selezione&quot;) only inside a single dropdown filter that has nothing selected by default, and &quot;Reset&quot; in every other case: see the Table filters guidelines. The clear button of a search field is &quot;Clear search&quot; (&quot;Azzera ricerca&quot;).</descrip>
 <langSet xml:lang="en">
 <tig>
 <term>Clear</term>
@@ -534,8 +601,8 @@
 </langSet>
 </termEntry>
 <termEntry id="my-nethesis">
-<descrip>The Nethesis administration portal, where systems are registered and managed. &quot;Nethesis administration portal&quot; (in Italian &quot;portale di amministrazione Nethesis&quot;) is a valid synonym to refer to it indirectly.</descrip>
-<descrip type="Usage note">Write &quot;My Nethesis&quot; in full. &quot;My&quot; is only an informal short form, not used in user interfaces.</descrip>
+<descrip>The Nethesis administration portal, where systems are registered and managed.</descrip>
+<descrip type="Usage note">Write &quot;My Nethesis&quot; in full. &quot;My&quot; is only an informal short form, not used in user interfaces. To refer to it indirectly, &quot;Nethesis administration portal&quot; (&quot;portale di amministrazione Nethesis&quot;) is also correct.</descrip>
 <descrip type="Translation needed">No</descrip>
 <langSet xml:lang="en">
 <tig>
@@ -554,7 +621,8 @@
 </langSet>
 </termEntry>
 <termEntry id="nethsecurity">
-<descrip>The Nethesis open source firewall for small and medium businesses, based on OpenWrt. Its installations are called units, and many units can be managed from NethServer 8 with the NethSecurity controller.</descrip>
+<descrip>The Nethesis open source firewall for small and medium businesses, based on OpenWrt. Many installations can be managed from NethServer 8 with the NethSecurity controller.</descrip>
+<descrip type="Usage note">Each installation is called a &quot;unit&quot;.</descrip>
 <descrip type="Translation needed">No</descrip>
 <langSet xml:lang="en">
 <tig>

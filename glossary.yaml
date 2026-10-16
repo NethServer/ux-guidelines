@@ -10,18 +10,18 @@
 #   en              preferred English term
 #   it              preferred Italian translation (omit when untranslatable)
 #   untranslatable  true when the term stays in English in every language
-#   definition      one sentence, user oriented
+#   definition      what the term means, in one or two user oriented sentences
 #   products        all | ns8 | nethsecurity | nethvoice | nethservice | neth360 | my
 #   avoid.en        English words not to use for this concept
 #   avoid.it        Italian translations not to use (forbidden on Weblate)
-#   notes           optional usage notes
+#   notes           optional: how to write it (examples, exceptions, Italian specifics)
 #
 # Example:
 #
 # - id: delete
 #   en: Delete
 #   it: Elimina
-#   definition: Permanently destroy an object.
+#   definition: Permanently destroy an object, such as a contact, a firewall rule or a user.
 #   products: [all]
 #   avoid:
 #     it: [Cancella]
@@ -114,17 +114,22 @@
 - id: create
   en: Create
   it: Crea
-  definition: Make a new object.
+  definition: Make a new object that did not exist before, such as a user, a group or a firewall rule.
   products: [all]
   avoid:
-    en: [New]
-  notes: 'Name the object: "Create user".'
+    en: [New, Add]
+  notes: >-
+    Name the object: "Create user". Use "Add" when the object already exists and is only
+    associated with another one.
 
 - id: add
   en: Add
   it: Aggiungi
   definition: Associate an object that already exists, for example add a user to a group.
   products: [all]
+  avoid:
+    en: [Create, New]
+  notes: 'Use "Create" when the object does not exist yet and is made from scratch.'
 
 - id: edit
   en: Edit
@@ -137,18 +142,36 @@
 - id: delete
   en: Delete
   it: Elimina
-  definition: Permanently destroy an object.
+  definition: Permanently destroy an object, such as a contact, a firewall rule or a user.
   products: [all]
   avoid:
-    it: [Cancella]
-  notes: Use Remove when the object is not destroyed.
+    en: [Remove]
+    it: [Cancella, Rimuovi]
+  notes: >-
+    Use "Remove" when the object only leaves a list or an association and still exists, for
+    example a user removed from a group. For applications, use "Uninstall". When the deletion
+    destroys data or many objects, ask for confirmation first: see Delete confirmation in the
+    guidelines.
 
 - id: remove
   en: Remove
   it: Rimuovi
-  definition: Take an object out of a list or an association without destroying it.
+  definition: Take an object out of a list or an association without destroying it, for example remove a user from a group.
   products: [all]
-  notes: Use Delete when the object is destroyed.
+  avoid:
+    en: [Delete]
+    it: [Elimina]
+  notes: Use "Delete" when the object is destroyed.
+
+- id: uninstall
+  en: Uninstall
+  it: Disinstalla
+  definition: Remove an application, with its data, from NethServer 8.
+  products: [ns8]
+  avoid:
+    en: [Delete, Remove]
+    it: [Elimina, Rimuovi]
+  notes: 'Name the application: "Uninstall mail1".'
 
 - id: enable
   en: Enable
@@ -178,9 +201,9 @@
   avoid:
     it: [Pulisci, Svuota, Cancella]
   notes: >-
-    Clear empties values; Reset brings them back to their defaults. For filters, use "Clear
+    "Clear" empties values; "Reset" brings them back to their defaults. For filters, use "Clear
     selection" ("Azzera selezione") only inside a single dropdown filter that has nothing
-    selected by default, and Reset in every other case: see the Table filters guidelines. The
+    selected by default, and "Reset" in every other case: see the Table filters guidelines. The
     clear button of a search field is "Clear search" ("Azzera ricerca").
 
 - id: reset
@@ -233,14 +256,13 @@
   untranslatable: true
   definition: >-
     The Nethesis administration portal, where systems are registered and managed.
-    "Nethesis administration portal" (in Italian "portale di amministrazione Nethesis")
-    is a valid synonym to refer to it indirectly.
   products: [all]
   avoid:
     en: [My, my.nethesis.it]
   notes: >-
     Write "My Nethesis" in full. "My" is only an informal short form, not used in user
-    interfaces.
+    interfaces. To refer to it indirectly, "Nethesis administration portal" ("portale di
+    amministrazione Nethesis") is also correct.
 
 - id: nethserver
   en: NethServer
@@ -259,11 +281,11 @@
   untranslatable: true
   definition: >-
     The Nethesis open source firewall for small and medium businesses, based on OpenWrt.
-    Its installations are called units, and many units can be managed from NethServer 8
-    with the NethSecurity controller.
+    Many installations can be managed from NethServer 8 with the NethSecurity controller.
   products: [all]
   avoid:
     en: [Nethsecurity, Nsec]
+  notes: 'Each installation is called a "unit".'
 
 - id: nethvoice
   en: NethVoice
