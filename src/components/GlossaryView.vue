@@ -118,10 +118,20 @@ const reviewedCount = computed(
 const productsText = (entry: GlossaryEntry) =>
   entry.products.map((product) => PRODUCT_LABELS[product]).join(', ')
 
-const avoidTerms = (entry: GlossaryEntry) => [
-  ...(entry.avoid?.en ?? []),
-  ...(entry.avoid?.it ?? [])
-]
+const LANGUAGE_NAMES = { en: 'English', it: 'Italian' } as const
+type Language = keyof typeof LANGUAGE_NAMES
+
+// terms to avoid with their languages: a word avoided in both languages,
+// such as "App", is listed once
+function avoidTerms(entry: GlossaryEntry) {
+  const terms = new Map<string, Language[]>()
+  for (const language of Object.keys(LANGUAGE_NAMES) as Language[]) {
+    for (const term of entry.avoid?.[language] ?? []) {
+      terms.set(term, [...(terms.get(term) ?? []), language])
+    }
+  }
+  return [...terms].map(([term, languages]) => ({ term, languages }))
+}
 
 // a link like #term-delete highlights and scrolls to that term
 const highlightedId = ref('')
@@ -215,7 +225,7 @@ onMounted(async () => {
       >
         <NeButton kind="tertiary" size="lg" @click="resetFilters">Reset filters</NeButton>
       </NeEmptyState>
-      <NeTable v-else aria-label="Glossary" card-breakpoint="lg">
+      <NeTable v-else aria-label="Glossary" card-breakpoint="xl">
         <NeTableHead>
           <NeTableHeadCell>English</NeTableHeadCell>
           <NeTableHeadCell>Italian</NeTableHeadCell>
@@ -281,13 +291,28 @@ onMounted(async () => {
             <NeTableCell data-label="Products">{{ productsText(entry) }}</NeTableCell>
             <NeTableCell data-label="Don't use">
               <ul class="flex flex-col gap-2">
-                <li v-for="term in avoidTerms(entry)" :key="term" class="flex items-start gap-1.5">
+                <li
+                  v-for="{ term, languages } in avoidTerms(entry)"
+                  :key="term"
+                  class="flex items-start gap-1.5"
+                >
                   <FontAwesomeIcon
                     :icon="faCircleXmark"
                     class="mt-0.5 size-4 shrink-0 text-rose-500 dark:text-rose-400"
                     aria-hidden="true"
                   />
-                  {{ term }}
+                  <span>
+                    {{ term }}
+                    <span
+                      class="ml-1 text-xs whitespace-nowrap text-gray-500 uppercase dark:text-gray-400"
+                      aria-hidden="true"
+                    >
+                      {{ languages.join(' · ') }}
+                    </span>
+                    <span class="sr-only">
+                      ({{ languages.map((language) => LANGUAGE_NAMES[language]).join(', ') }})
+                    </span>
+                  </span>
                 </li>
               </ul>
             </NeTableCell>
