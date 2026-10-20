@@ -150,8 +150,8 @@
   notes: >-
     Use "Remove" when the object only leaves a list or an association and still exists, for
     example a user removed from a group. For applications, use "Uninstall". When the deletion
-    destroys data or many objects, ask for confirmation first: see Delete confirmation in the
-    guidelines.
+    has consequences beyond the object itself, ask for confirmation first: see Delete confirmation
+    in the guidelines.
 
 - id: remove
   en: Remove
@@ -318,6 +318,28 @@
     en: [Nethlink]
 
 # Applications
+
+- id: application
+  en: Application
+  it: Applicazione
+  definition: Software installed on NethServer 8 from the Software center, such as Mail, Nextcloud or NethVoice.
+  products: [ns8, my]
+  avoid:
+    en: [App]
+    it: [App]
+  notes: >-
+    Always prefer "Application" to "Instance"; use "Instance" only when strictly necessary. "App"
+    is fine for mobile and desktop apps, such as NethLink or the NethVoice mobile app.
+
+- id: instance
+  en: Instance
+  it: Istanza
+  definition: A single installed copy of an application, such as mail1. The same application can be installed more than once.
+  products: [ns8]
+  notes: >-
+    Use "Instance" only when the context strictly requires one specific copy of an application,
+    and "Application" would be misleading: for example, to choose among several copies of the
+    same application ("Choose a NethVoice instance"). In every other case, use "Application".
 
 - id: webtop
   en: WebTop

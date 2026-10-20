@@ -256,7 +256,7 @@
 </termEntry>
 <termEntry id="delete">
 <descrip>Permanently destroy an object, such as a contact, a firewall rule or a user.</descrip>
-<descrip type="Usage note">Use &quot;Remove&quot; when the object only leaves a list or an association and still exists, for example a user removed from a group. For applications, use &quot;Uninstall&quot;. When the deletion destroys data or many objects, ask for confirmation first: see Delete confirmation in the guidelines.</descrip>
+<descrip type="Usage note">Use &quot;Remove&quot; when the object only leaves a list or an association and still exists, for example a user removed from a group. For applications, use &quot;Uninstall&quot;. When the deletion has consequences beyond the object itself, ask for confirmation first: see Delete confirmation in the guidelines.</descrip>
 <langSet xml:lang="en">
 <tig>
 <term>Delete</term>
@@ -655,6 +655,47 @@
 <langSet xml:lang="en">
 <tig>
 <term>NethLink</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="application">
+<descrip>Software installed on NethServer 8 from the Software center, such as Mail, Nextcloud or NethVoice.</descrip>
+<descrip type="Usage note">Always prefer &quot;Application&quot; to &quot;Instance&quot;; use &quot;Instance&quot; only when strictly necessary. &quot;App&quot; is fine for mobile and desktop apps, such as NethLink or the NethVoice mobile app.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Application</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Applicazione</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="application--forbidden-app">
+<langSet xml:lang="en">
+<tig>
+<term>Application</term>
+<termNote type="administrativeStatus">forbidden</termNote>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>App</term>
+</tig>
+</langSet>
+</termEntry>
+<termEntry id="instance">
+<descrip>A single installed copy of an application, such as mail1. The same application can be installed more than once.</descrip>
+<descrip type="Usage note">Use &quot;Instance&quot; only when the context strictly requires one specific copy of an application, and &quot;Application&quot; would be misleading: for example, to choose among several copies of the same application (&quot;Choose a NethVoice instance&quot;). In every other case, use &quot;Application&quot;.</descrip>
+<langSet xml:lang="en">
+<tig>
+<term>Instance</term>
+</tig>
+</langSet>
+<langSet xml:lang="it">
+<tig>
+<term>Istanza</term>
 </tig>
 </langSet>
 </termEntry>
