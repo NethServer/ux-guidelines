@@ -281,7 +281,7 @@ onMounted(async () => {
               <template v-else>{{ entry.it }}</template>
             </NeTableCell>
             <NeTableCell data-label="Definition">
-              <div class="max-w-md whitespace-normal">
+              <div class="max-w-md whitespace-normal wrap-anywhere">
                 {{ entry.definition }}
                 <p v-if="entry.notes" class="mt-1 text-gray-500 dark:text-gray-400">
                   {{ entry.notes }}
@@ -301,14 +301,14 @@ onMounted(async () => {
                     class="mt-0.5 size-4 shrink-0 text-rose-500 dark:text-rose-400"
                     aria-hidden="true"
                   />
+                  <!-- no space before the language label, so it never wraps alone -->
                   <span>
-                    {{ term }}
-                    <span
+                    {{ term
+                    }}<span
                       class="ml-1 text-xs whitespace-nowrap text-gray-500 uppercase dark:text-gray-400"
                       aria-hidden="true"
+                      >{{ languages.join(' · ') }}</span
                     >
-                      {{ languages.join(' · ') }}
-                    </span>
                     <span class="sr-only">
                       ({{ languages.map((language) => LANGUAGE_NAMES[language]).join(', ') }})
                     </span>
