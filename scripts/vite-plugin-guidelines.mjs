@@ -15,10 +15,13 @@
 //     check runs on Vue's own syntax tree: only the elements and attributes
 //     that plain markdown produces are accepted.
 //
+// Tables whose header is "Do | Don't" get the do-dont class, styled with
+// check and cross marks.
+//
 // The module also exports `toc`, the list of level 2 headings.
 
 import { fileURLToPath } from 'node:url'
-import { Marked } from 'marked'
+import { Marked, Renderer } from 'marked'
 import { parse } from 'vue/compiler-sfc'
 import { slug } from './slug.mjs'
 
@@ -46,7 +49,7 @@ const ALLOWED = {
   del: {},
   code: { class: /^language-[a-z0-9-]+$/ },
   pre: {},
-  table: {},
+  table: { class: /^do-dont$/ },
   thead: {},
   tbody: {},
   tr: {},
@@ -88,6 +91,11 @@ export function renderGuidelines(markdown) {
       }
     },
     renderer: {
+      table(token) {
+        const html = Renderer.prototype.table.call(this, token)
+        const header = token.header.map((cell) => plainText(cell.tokens))
+        return header.join('|') === "Do|Don't" ? html.replace(/^<table>/, '<table class="do-dont">') : html
+      },
       heading({ tokens, depth }) {
         const title = plainText(tokens)
         const id = slug(title)

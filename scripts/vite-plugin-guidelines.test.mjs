@@ -61,3 +61,10 @@ test('external links open in a new tab', () => {
   assert.match(sfc, /href="https:\/\/example.com" target="_blank" rel="noopener noreferrer"/)
   assert.match(sfc, /href="#c">/)
 })
+
+test('Do and Don\'t tables get the do-dont class', () => {
+  const { errors, sfc } = renderGuidelines("| Do | Don't |\n| --- | --- |\n| a | b |\n\n| A | B |\n| --- | --- |\n| c | d |")
+  assert.deepEqual(errors, [])
+  assert.equal(sfc.match(/<table class="do-dont">/g).length, 1)
+  assert.equal(sfc.match(/<table>/g).length, 1)
+})
