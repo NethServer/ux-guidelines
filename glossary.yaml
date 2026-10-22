@@ -81,6 +81,16 @@
   avoid:
     en: [Nethshop]
 
+- id: company
+  en: Company
+  it: Azienda
+  definition: A distributor, a reseller or a customer in My Nethesis, with its users and systems.
+  products: [my]
+  avoid:
+    en: [Organization]
+    it: [Organizzazione]
+  notes: 'Use "Company" for the generic case; use "Distributor", "Reseller" or "Customer" when the level matters.'
+
 # Features
 
 - id: threat-shield
@@ -217,6 +227,18 @@
     "Reset filters" ("Reimposta filtri"), "Reset selection" ("Reimposta selezione"), "Reset
     password" ("Reimposta password"). In Italian, "Ripristina" is for restoring a backup.
 
+- id: details
+  en: Details
+  it: Dettagli
+  definition: The button that opens the page of an object, in a table row or a card.
+  products: [all]
+  avoid:
+    en: [View, See details, View details]
+    it: [Visualizza]
+  notes: >-
+    An exception to the verb rule for buttons, for brevity: always with the eye icon, and with the
+    object name for screen readers. "Show details" is for content that opens in place.
+
 - id: sign-in
   en: Sign in
   it: Accedi
@@ -237,6 +259,28 @@
   avoid:
     en: [Log out, Logout, Log off]
     it: [Disconnetti, Logout]
+
+# Accounts
+
+- id: username
+  en: Username
+  it: Nome utente
+  definition: The name a user signs in with.
+  products: [all]
+  avoid:
+    en: [User name]
+    it: [Utente, Username]
+  notes: 'Translate it also in short labels: "Username and password" is "Nome utente e password", not "Utente e password".'
+
+# Monitoring
+
+- id: alert
+  en: Alert
+  it: Allarme
+  definition: A notice raised when a monitored condition needs attention, such as a full disk or too many calls waiting in a queue.
+  products: [all]
+  avoid:
+    en: [Alarm]
 
 # Backup
 
@@ -286,6 +330,19 @@
   avoid:
     en: [Nethsecurity, Nsec]
   notes: 'Each installation is called a "unit".'
+
+- id: unit
+  en: Unit
+  it: Unità
+  definition: A single NethSecurity installation, such as one managed by the NethSecurity controller.
+  products: [nethsecurity]
+  avoid:
+    en: [Firewall unit, Firewall, Device]
+    it: [Unità firewall, Dispositivo, Firewall]
+  notes: >-
+    Call the installation "unit", also in technical texts: "The unit IP address", "Reset the
+    unit". "Firewall" stays correct for the feature, as in "firewall rules", and for the kind of
+    product, as in "NethSecurity is a firewall".
 
 - id: nethvoice
   en: NethVoice
