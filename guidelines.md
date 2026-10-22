@@ -30,7 +30,8 @@ When a sentence names a specific page, menu item or tab, write it exactly as it 
 ## Punctuation
 
 - End full sentences with a period in descriptions and body text.
-- Don't use a period in titles, labels, buttons, placeholders, table cells and toast notifications.
+- Don't use a period in titles, labels, buttons, placeholders, table cells and short inline validation messages.
+- In toast notifications, omit the final period when the description is one short sentence. Use normal punctuation when it has more sentences.
 - Use the ellipsis character `…`, not three dots. Use it only for text that is in progress (`Loading…`).
 - Use straight quotes around names the user must type: `Type 'Alice Fox' to confirm`.
 
@@ -54,6 +55,12 @@ For links and buttons that take the user somewhere else:
 | --- | --- |
 | Go to Settings | Open Settings |
 | Open Wikipedia | Go to Wikipedia |
+
+Exception for brevity: in a table row or a card, the button that opens the page of the object is `Details` (`Dettagli`), with the eye icon. Add the object name for screen readers, after the visible label: "Details Alice Fox". Use `Show details` only for content that opens in place.
+
+| Do | Don't |
+| --- | --- |
+| Details | View, See details, View details |
 
 ## Page header
 
@@ -95,7 +102,7 @@ From the [*Empty state* pattern](https://nethesis.github.io/vue-components/?path
 | --- | --- | --- | --- |
 | Nothing created yet | No users configured | (Optional) | Create user |
 | Nothing to show, nothing to create | No voicemail messages | You currently have no voicemail messages. | none |
-| Filters match nothing | No users found | Try changing your search filters | Reset filters |
+| Filters match nothing | No users found | Try changing your search filters. | Reset filters |
 | No permission | Restricted page | It seems that you don't have the necessary permissions to view this page. | Go to Dashboard |
 
 ## Delete confirmation
@@ -128,7 +135,7 @@ From the [*New password form* pattern](https://nethesis.github.io/vue-components
 
 - Labels are nouns: `Username`, `New password`. A label can be a short instruction when a noun would be unclear, as in `Confirm new password`.
 - Validation messages say how to fix the value: `Choose a password that meets all requirements`, `Passwords do not match`.
-- Mark optional fields, not required ones. When a required field is empty, say `<Field> is required`, for example `Username is required`.
+- Mark optional fields, not required ones. When a required field is empty, say `Required`, or give a positive instruction that names what is missing: `Enter a username`, `Select a language`, `Enter an integer number`.
 
 ## Numbers, dates and units
 
@@ -151,7 +158,7 @@ From the [*New password form* pattern](https://nethesis.github.io/vue-components
 | User Alice Fox will be deleted. | L'utente Alice Fox verrà eliminato. |
 | Type 'Alice Fox' to confirm | Digita 'Alice Fox' per confermare |
 | No users found | Nessun utente trovato |
-| Try changing your search filters | Prova a modificare i filtri di ricerca |
+| Try changing your search filters. | Prova a modificare i filtri di ricerca. |
 | Go to Dashboard | Vai alla Dashboard |
 | Open Wikipedia | Apri Wikipedia |
 | Cancel | Annulla |
