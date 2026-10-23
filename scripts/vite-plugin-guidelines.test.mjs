@@ -17,7 +17,7 @@ const compile = (sfc) => {
 test('guidelines.md is accepted', () => {
   const { errors, sfc } = renderGuidelines(readFileSync(GUIDELINES_PATH, 'utf8'))
   assert.deepEqual(errors, [])
-  assert.match(sfc, /export const toc = \[\{"id":"voice-and-tone"/)
+  assert.match(sfc, /export const toc = \[.*\{"id":"voice-and-tone","title":"Voice and tone"\}/)
 })
 
 const rejected = {
