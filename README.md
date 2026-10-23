@@ -1,10 +1,13 @@
-# Nethesis UX writing guide
+# Nethesis UX guidelines
 
-How to write the user interfaces of Nethesis products (NethServer 8, NethSecurity, NethVoice,
-NethService, Neth360 and My Nethesis): style rules, and the glossary of terms with their Italian
-translations.
+Rules shared by the user interfaces of all Nethesis products (NethServer 8, NethSecurity,
+NethVoice, NethService, Neth360 and My Nethesis), whatever technology they are built with:
+writing guidelines, and the glossary of terms with their Italian translations.
 
-Read it at https://nethserver.github.io/ux-writing-guide/.
+Components and their usage are documented in the
+[vue-components Storybook](https://nethesis.github.io/vue-components/).
+
+Read it at https://nethserver.github.io/ux-guidelines/.
 
 ## Files
 

@@ -5,7 +5,7 @@ import guidelines, { GUIDELINES_PATH } from './scripts/vite-plugin-guidelines.mj
 import glossaryWatch from './scripts/vite-plugin-glossary-watch.mjs'
 
 export default defineConfig({
-  // relative base: the site is served from https://<org>.github.io/ux-writing-guide/
+  // relative base: the site is served from https://<org>.github.io/ux-guidelines/
   base: './',
   // guidelines.md becomes a Vue component, see scripts/vite-plugin-guidelines.mjs
   plugins: [

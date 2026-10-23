@@ -19,6 +19,7 @@ export const REVIEW_LABELS: Record<ReviewState, string> = {
   'not-reviewed': 'Not reviewed'
 }
 
+// old project name, kept so that existing marks survive the rename
 const STORAGE_KEY = 'ux-writing-guide:reviewed'
 
 // JSON with sorted keys, so reordering the fields in glossary.yaml does not
