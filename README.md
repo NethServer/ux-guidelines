@@ -15,6 +15,7 @@ Read it at https://nethserver.github.io/ux-guidelines/.
 | --- | --- |
 | `glossary.yaml` | The glossary: single source of truth, edited through pull requests. The comment at the top describes the fields |
 | `content/*.md` | The text pages (introduction, writing guidelines): plain markdown, no HTML or images. Tables with a "Do \| Don't" header are shown with check and cross marks. Link other pages with `?page=<id>`, for example `[glossary](?page=glossary)` |
+| `content/components/*.md` | One page per component, in the Components group: the first paragraph is the summary shown in the header and in the overview, the second is the `Code:` line with the Storybook and Figma links |
 | `glossary/it.tbx` | Italian glossary for Weblate, generated from `glossary.yaml` (do not edit) |
 | `scripts/build-data.mjs` | Validates `glossary.yaml` and generates the TBX files and the page data |
 | `scripts/vite-plugin-markdown.mjs` | Compiles each `content/*.md` into a Vue component, rejecting raw HTML and unsafe links (tests in `vite-plugin-markdown.test.mjs`) |
