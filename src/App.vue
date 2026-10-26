@@ -35,6 +35,17 @@ watch(
   { immediate: true }
 )
 
+// pages loaded when opened render after a while: wait for an anchor for up
+// to two seconds
+async function waitForElement(id: string) {
+  for (let i = 0; i < 120; i++) {
+    const element = document.getElementById(id)
+    if (element) return element
+    await new Promise(requestAnimationFrame)
+  }
+  return null
+}
+
 // each page has its own query parameters and anchors
 async function navigate(page: Page, hash = '') {
   sidebarOpen.value = false
@@ -43,7 +54,7 @@ async function navigate(page: Page, hash = '') {
     currentPage.value = page
   }
   await nextTick()
-  const target = hash ? document.getElementById(hash.slice(1)) : null
+  const target = hash ? await waitForElement(hash.slice(1)) : null
   if (target) {
     target.scrollIntoView()
   } else {
@@ -83,7 +94,12 @@ function followPageLink(event: MouseEvent) {
 }
 
 const onPopState = () => (currentPage.value = pageFromLocation())
-onMounted(() => window.addEventListener('popstate', onPopState))
+onMounted(async () => {
+  window.addEventListener('popstate', onPopState)
+  // the browser looks for the anchor before the page is rendered
+  const id = decodeURIComponent(window.location.hash.slice(1))
+  if (id && !document.getElementById(id)) (await waitForElement(id))?.scrollIntoView()
+})
 onUnmounted(() => window.removeEventListener('popstate', onPopState))
 </script>
 

@@ -121,6 +121,9 @@
   code {
     @apply rounded bg-gray-100 px-1 py-0.5 text-[0.8125rem] whitespace-nowrap dark:bg-gray-800;
   }
+  pre code {
+    @apply bg-transparent p-0 whitespace-pre;
+  }
 }
 
 .ds-table {

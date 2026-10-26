@@ -1,12 +1,13 @@
 //  Copyright (C) 2026 Nethesis S.r.l.
 //  SPDX-License-Identifier: GPL-3.0-or-later
 
-import type { Component } from 'vue'
+import { defineAsyncComponent, type Component } from 'vue'
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import {
   faBook,
   faFont,
   faHouse,
+  faIcons,
   faLayerGroup,
   faPalette,
   faPenNib,
@@ -15,12 +16,9 @@ import {
 import IntroductionView from './components/IntroductionView.vue'
 import GuidelinesView from './components/GuidelinesView.vue'
 import GlossaryView from './components/GlossaryView.vue'
-import ColorsView from './components/ColorsView.vue'
-import TypographyView from './components/TypographyView.vue'
-import SpacingView from './components/SpacingView.vue'
-import ElevationView from './components/ElevationView.vue'
 
-// The pages of the site, grouped as in the sidebar. The page id is the value
+// The pages of the site, grouped as in the sidebar. The foundations pages
+// are loaded when opened, to keep the first download small. The page id is the value
 // of the ?page= query parameter; the first page is the home page.
 
 export type Page = {
@@ -60,28 +58,36 @@ export const PAGE_GROUPS: PageGroup[] = [
         description:
           'The color tokens of Nethesis user interfaces, for the light and the dark theme, and the palettes they come from.',
         icon: faPalette,
-        component: ColorsView
+        component: defineAsyncComponent(() => import('./components/ColorsView.vue'))
       },
       {
         id: 'typography',
         title: 'Typography',
         description: 'The typeface, the sizes and the text styles of Nethesis user interfaces.',
         icon: faFont,
-        component: TypographyView
+        component: defineAsyncComponent(() => import('./components/TypographyView.vue'))
+      },
+      {
+        id: 'iconography',
+        title: 'Iconography',
+        description:
+          'The icon library, the styles and sizes of icons, and the Nethesis custom icons.',
+        icon: faIcons,
+        component: defineAsyncComponent(() => import('./components/IconographyView.vue'))
       },
       {
         id: 'spacing-and-border',
         title: 'Spacing and border',
         description: 'The spacing scale, the border radius and width, and the focus ring.',
         icon: faRulerCombined,
-        component: SpacingView
+        component: defineAsyncComponent(() => import('./components/SpacingView.vue'))
       },
       {
         id: 'elevation-and-shadow',
         title: 'Elevation and shadow',
         description: 'Surface levels and shadows that give depth to the interface.',
         icon: faLayerGroup,
-        component: ElevationView
+        component: defineAsyncComponent(() => import('./components/ElevationView.vue'))
       }
     ]
   },
