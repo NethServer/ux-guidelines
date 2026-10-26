@@ -1,6 +1,6 @@
 # Writing guidelines
 
-Rules for the text of every Nethesis user interface. Use them together with the glossary. Where a rule comes from a [vue-components pattern](https://nethesis.github.io/vue-components/), use that pattern instead of rebuilding it.
+Rules for the text of every Nethesis user interface. Use them together with the [glossary](?page=glossary). Where a rule comes from a [vue-components pattern](https://nethesis.github.io/vue-components/), use that pattern instead of rebuilding it.
 
 The text should help users understand what is happening, identify the affected item, know what they can or must do next, and recognize the same patterns across products.
 
@@ -8,7 +8,7 @@ The text should help users understand what is happening, identify the affected i
 
 - **Be clear and specific.** Use plain language and name the affected item, state or action. Keep the text short without removing what users need.
 - **Write from the user's perspective.** Say what users need to know, not what the system did internally.
-- **Be consistent.** Use the same term for the same concept in labels, titles, descriptions and actions: see the glossary.
+- **Be consistent.** Use the same term for the same concept in labels, titles, descriptions and actions: see the [glossary](?page=glossary).
 - **Guide users when they can act.** When users can solve a problem or continue a task, say what to do next. Never suggest an action that is not available.
 - **Explain consequences.** Before a destructive or irreversible action, say what will be affected and whether it can be undone.
 
@@ -91,7 +91,7 @@ Start with a verb and name the object when the context is not obvious. Keep labe
 | Delete | Confirm |
 | Save changes | Submit, Proceed |
 
-Use the glossary verbs: **Create** a new object, **Add** an existing one, **Edit**, **Delete** to destroy, **Remove** from a list, **Uninstall** an application.
+Use the [glossary](?page=glossary) verbs: **Create** a new object, **Add** an existing one, **Edit**, **Delete** to destroy, **Remove** from a list, **Uninstall** an application.
 
 Recurring actions:
 
@@ -242,7 +242,7 @@ Keep the title on one line and the description to one sentence. Say clearly what
 
 - Use the informal imperative (*tu*): `Inserisci`, `Seleziona`, `Controlla`. Don't use the infinitive (`Inserire`) or the formal form (`Inserisca`).
 - Keep the English capitalization: sentence case. Write the name of a page, menu item or tab exactly as its Italian label: `Vai alla Dashboard`, `Vai alle Impostazioni`. Translate **Go to** as *Vai a* and **Open** as *Apri*.
-- Don't translate the terms marked *Keep in English* in the glossary. Translate everything else, including `Download` (`Scarica`) and `Upload` (`Carica`).
+- Don't translate the terms marked *Keep in English* in the [glossary](?page=glossary). Translate everything else, including `Download` (`Scarica`) and `Upload` (`Carica`).
 - For notifications about an object, use the definite article: `L'utente <name> è stato creato`, `La regola <name> è stata eliminata`.
 - Patterns to reuse:
 

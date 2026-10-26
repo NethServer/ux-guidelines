@@ -20,7 +20,7 @@ jobs:
       - run: npm ci
       # glossary.yaml is valid and glossary/*.tbx are up to date
       - run: npm run check
-      # guidelines.md cannot inject HTML, scripts or Vue expressions
+      # content/*.md cannot inject HTML, scripts or Vue expressions
       - run: npm test
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3

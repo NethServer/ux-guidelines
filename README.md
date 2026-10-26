@@ -14,16 +14,17 @@ Read it at https://nethserver.github.io/ux-guidelines/.
 | File | Purpose |
 | --- | --- |
 | `glossary.yaml` | The glossary: single source of truth, edited through pull requests. The comment at the top describes the fields |
-| `guidelines.md` | Writing guidelines: plain markdown, no HTML or images. Tables with a "Do \| Don't" header are shown with check and cross marks |
+| `content/*.md` | The text pages (introduction, writing guidelines): plain markdown, no HTML or images. Tables with a "Do \| Don't" header are shown with check and cross marks. Link other pages with `?page=<id>`, for example `[glossary](?page=glossary)` |
 | `glossary/it.tbx` | Italian glossary for Weblate, generated from `glossary.yaml` (do not edit) |
 | `scripts/build-data.mjs` | Validates `glossary.yaml` and generates the TBX files and the page data |
-| `scripts/vite-plugin-guidelines.mjs` | Compiles `guidelines.md` into a Vue component, rejecting raw HTML and unsafe links (tests in `vite-plugin-guidelines.test.mjs`) |
+| `scripts/vite-plugin-markdown.mjs` | Compiles each `content/*.md` into a Vue component, rejecting raw HTML and unsafe links (tests in `vite-plugin-markdown.test.mjs`) |
 | `scripts/vite-plugin-glossary-watch.mjs` | Dev server only: reruns `build-data.mjs` when `glossary.yaml` is saved |
-| `src/` | Searchable web page (Vue, `@nethesis/vue-components`), published on GitHub Pages |
+| `src/pages.ts` | The pages of the site and their sidebar groups |
+| `src/` | The web site (Vue, `@nethesis/vue-components`), published on GitHub Pages |
 
 ## Workflow
 
-1. Edit `glossary.yaml` or `guidelines.md`.
+1. Edit `glossary.yaml` or a page in `content/`.
 2. Regenerate `glossary/it.tbx` with `npm run build:data` (the dev server does it on save), and
    commit it.
 3. Open a pull request. CI validates the glossary and the guidelines, and fails if the TBX files
@@ -58,5 +59,5 @@ In development only, each glossary entry has a "Reviewed" checkbox and the list 
 filter: the marks are saved in the browser and an entry edited after its review shows "Changed
 since review".
 
-`npm test` runs the tests of the guidelines plugin, including the security ones. `npm run build` builds the page
+`npm test` runs the tests of the markdown plugin, including the security ones. `npm run build` builds the page
 into `dist/`.

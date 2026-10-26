@@ -6,7 +6,7 @@ declare module '*.vue' {
   export default component
 }
 
-// guidelines.md, compiled by scripts/vite-plugin-guidelines.mjs
+// content/*.md, compiled by scripts/vite-plugin-markdown.mjs
 declare module '*.md' {
   import type { DefineComponent } from 'vue'
   export const toc: { id: string; title: string }[]

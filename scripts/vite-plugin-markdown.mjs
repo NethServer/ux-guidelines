@@ -1,7 +1,8 @@
 // Copyright (C) 2026 Nethesis S.r.l.
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-// Vite plugin that turns guidelines.md into a Vue component at build time.
+// Vite plugin that turns the markdown pages in content/ into Vue components at
+// build time.
 //
 // marked converts the markdown to HTML, which becomes the template of a Vue
 // component compiled by @vitejs/plugin-vue: the page gets static elements,
@@ -18,17 +19,23 @@
 // Tables whose header is "Do | Don't" get the do-dont class, styled with
 // check and cross marks.
 //
-// The module also exports `toc`, the list of level 2 headings.
+// Each page also exports `toc`, the list of its level 2 headings.
 
+import { basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { Marked, Renderer } from 'marked'
 import { parse } from 'vue/compiler-sfc'
 import { slug } from './slug.mjs'
 
-export const GUIDELINES_PATH = fileURLToPath(new URL('../guidelines.md', import.meta.url))
+export const CONTENT_DIR = fileURLToPath(new URL('../content/', import.meta.url))
 
-// web pages, anchors and paths inside the site
-const SAFE_HREF = /^(https?:\/\/|#|\.{0,2}\/|[a-z0-9-]+(\/|$))/i
+// the markdown files directly inside content/
+export const CONTENT_PAGE = new RegExp(
+  `^${CONTENT_DIR.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^/]+\\.md$`
+)
+
+// web pages, anchors, paths and other pages of the site (?page=glossary)
+const SAFE_HREF = /^(https?:\/\/|#|\.{0,2}\/|[a-z0-9-]+(\/|$)|\?page=[a-z0-9-]+(#[a-z0-9-]+)?$)/i
 
 // elements that plain markdown produces, with the values allowed for each
 // attribute
@@ -74,7 +81,7 @@ const escape = (text) =>
 const plainText = (tokens = []) =>
   tokens.map((token) => (token.tokens ? plainText(token.tokens) : token.text)).join('')
 
-export function renderGuidelines(markdown) {
+export function renderMarkdown(markdown, filename = 'page.md') {
   const errors = []
   const ids = new Set()
   const toc = []
@@ -126,7 +133,7 @@ export const toc = ${JSON.stringify(toc).replace(/</g, '\\u003c')}
 `
 
   // check what Vue will compile
-  const { descriptor, errors: parseErrors } = parse(sfc, { filename: GUIDELINES_PATH })
+  const { descriptor, errors: parseErrors } = parse(sfc, { filename })
   errors.push(...parseErrors.map((error) => error.message))
 
   const root = descriptor.template?.ast?.children.filter((node) => node.type !== TEXT) ?? []
@@ -151,14 +158,14 @@ export const toc = ${JSON.stringify(toc).replace(/</g, '\\u003c')}
   return { sfc, errors }
 }
 
-export default function guidelines() {
+export default function markdownPages() {
   return {
-    name: 'nethesis:guidelines',
+    name: 'nethesis:markdown',
     enforce: 'pre',
     transform(markdown, id) {
-      if (id !== GUIDELINES_PATH) return
-      const { sfc, errors } = renderGuidelines(markdown)
-      if (errors.length) this.error(`guidelines.md:\n${errors.join('\n')}`)
+      if (!CONTENT_PAGE.test(id)) return
+      const { sfc, errors } = renderMarkdown(markdown, id)
+      if (errors.length) this.error(`content/${basename(id)}:\n${errors.join('\n')}`)
       return { code: sfc, map: null }
     }
   }

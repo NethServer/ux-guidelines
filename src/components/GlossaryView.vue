@@ -148,6 +148,7 @@ let copiedTimeout: ReturnType<typeof setTimeout> | undefined
 
 async function copyLink(entry: GlossaryEntry) {
   const url = new URL(window.location.pathname, window.location.origin)
+  url.searchParams.set('page', 'glossary')
   url.hash = `term-${entry.id}`
   try {
     await navigator.clipboard.writeText(url.href)

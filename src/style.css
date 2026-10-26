@@ -38,18 +38,18 @@
   }
 }
 
-/* guidelines.md rendered to HTML */
-.guidelines {
+/* content/*.md rendered to HTML */
+.markdown {
   @apply max-w-3xl text-sm leading-6 text-gray-700 dark:text-gray-200;
 
   h1 {
     @apply hidden;
   }
   h2 {
-    @apply mt-10 mb-3 scroll-mt-6 text-lg font-semibold text-gray-900 dark:text-gray-50;
+    @apply mt-10 mb-3 scroll-mt-20 text-lg font-semibold text-gray-900 dark:text-gray-50;
   }
   h3 {
-    @apply mt-6 mb-2 scroll-mt-6 font-semibold text-gray-900 dark:text-gray-50;
+    @apply mt-6 mb-2 scroll-mt-20 font-semibold text-gray-900 dark:text-gray-50;
   }
   p,
   ul,

@@ -26,6 +26,9 @@ that it agrees with this guide. Remove an item once it is done.
   is one short sentence; use normal punctuation when it has more sentences", as on the Writing
   guidelines page.
 
+- [ ] **Colors** page, *Colors documentation*: typos "sush" (such) in the Text token description,
+  and "Emerald /500" (Emerald/500) in the NethVoice Product Primary table.
+
 ## To complete or remove
 
 - [ ] **Table** page, *Guideline and use cases*: still the template, with placeholder text. Fill
