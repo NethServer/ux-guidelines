@@ -20,6 +20,8 @@ Read it at https://nethserver.github.io/ux-guidelines/.
 | `scripts/vite-plugin-markdown.mjs` | Compiles each `content/*.md` into a Vue component, rejecting raw HTML and unsafe links (tests in `vite-plugin-markdown.test.mjs`) |
 | `scripts/vite-plugin-glossary-watch.mjs` | Dev server only: reruns `build-data.mjs` when `glossary.yaml` is saved |
 | `src/pages.ts` | The pages of the site and their sidebar groups |
+| `data/colors.json` | Color tokens exported from the NDS Figma file (do not edit): see "Colors" below |
+| `scripts/figma/export-colors.js`, `scripts/import-colors.mjs` | Export the color variables from Figma, then validate them and write `data/colors.json` |
 | `src/foundations.ts` | Values of the foundations pages (typography, spacing and border, elevation and shadow), copied from the NDS Figma file: update them when Figma changes |
 | `src/` | The web site (Vue, `@nethesis/vue-components`), published on GitHub Pages |
 
@@ -34,6 +36,15 @@ Read it at https://nethserver.github.io/ux-guidelines/.
 
 `glossary.yaml` contains approved terms only: every entry is exported to Weblate, so add a term
 once it has been agreed. Translations listed under `avoid.it` become forbidden translations.
+
+## Colors
+
+The Colors page reads `data/colors.json`. To update it after a change in Figma:
+
+1. Run the code of `scripts/figma/export-colors.js` with the `use_figma` tool of the Figma MCP server,
+   on the NDS file, and save the returned JSON to a file.
+2. Run `npm run import:colors -- <file>`: it validates the export and rewrites `data/colors.json`.
+3. Review the diff and commit it.
 
 ## Weblate
 

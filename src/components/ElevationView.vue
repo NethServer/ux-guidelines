@@ -15,7 +15,7 @@ const { isDark } = useTheme()
     <h2 id="elevation">Elevation</h2>
     <p>
       Elevation and shadow give depth to the interface, and build a visual hierarchy that guides the
-      attention of users. Each level, from L0 to L3, has a surface color from the gray palette. L2
+      attention of users. Each level, from L0 to L4, has a surface color from the gray palette. L2
       invert uses the L0 color to stand out on an L1 surface.
     </p>
     <p>The example follows the theme selected in the top bar.</p>

@@ -8,12 +8,14 @@ import {
   faFont,
   faHouse,
   faLayerGroup,
+  faPalette,
   faPenNib,
   faRulerCombined
 } from '@fortawesome/free-solid-svg-icons'
 import IntroductionView from './components/IntroductionView.vue'
 import GuidelinesView from './components/GuidelinesView.vue'
 import GlossaryView from './components/GlossaryView.vue'
+import ColorsView from './components/ColorsView.vue'
 import TypographyView from './components/TypographyView.vue'
 import SpacingView from './components/SpacingView.vue'
 import ElevationView from './components/ElevationView.vue'
@@ -52,6 +54,14 @@ export const PAGE_GROUPS: PageGroup[] = [
   {
     label: 'Foundations',
     pages: [
+      {
+        id: 'colors',
+        title: 'Colors',
+        description:
+          'The color tokens of Nethesis user interfaces, for the light and the dark theme, and the palettes they come from.',
+        icon: faPalette,
+        component: ColorsView
+      },
       {
         id: 'typography',
         title: 'Typography',

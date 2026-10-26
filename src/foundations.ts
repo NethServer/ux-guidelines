@@ -258,6 +258,7 @@ export const ELEVATION = [
   { level: 'L1', light: 'gray-50', dark: 'gray-900', className: 'bg-gray-50 dark:bg-gray-900' },
   { level: 'L2', light: 'gray-100', dark: 'gray-800', className: 'bg-gray-100 dark:bg-gray-800' },
   { level: 'L3', light: 'gray-200', dark: 'gray-700', className: 'bg-gray-200 dark:bg-gray-700' },
+  { level: 'L4', light: 'gray-300', dark: 'gray-600', className: 'bg-gray-300 dark:bg-gray-600' },
   { level: 'L2 invert', light: 'white', dark: 'gray-950', className: 'bg-white dark:bg-gray-950' }
 ]
 

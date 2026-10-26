@@ -33,6 +33,16 @@ that it agrees with this guide. Remove an item once it is done.
   `Rounded`, `Rounded md`…), while the variables follow Tailwind 4 (`rounded-xs` 2 px,
   `rounded-sm` 4 px, `rounded-md` 6 px…). Rename the rows as the variables.
 
+- [ ] **Semantic colors** variables, descriptions copied from other tokens:
+  - the Favicon and Placeholder tokens of NethSecurity, NethVoice, NethLink and NethService say
+    "Focus … components";
+  - the Website and My Nethesis tokens mention NethService;
+  - `Text/Warning` says "on rose background";
+  - `Elevation/L0`, `L2`, `L2 invert`, `L3` and `L4` all say "content on S0 (es: cards)";
+  - `Border/Ring/Toast` and the `Border/Accent` tokens say "components like InlineNotification".
+- [ ] **Elevation and shadow** page: the variables include `Elevation/L4` (gray-300, dark gray-600),
+  which the page does not show.
+
 ## To complete or remove
 
 - [ ] **Table** page, *Guideline and use cases*: still the template, with placeholder text. Fill

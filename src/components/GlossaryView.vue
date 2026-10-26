@@ -221,7 +221,7 @@ onMounted(async () => {
         v-if="!filteredEntries.length"
         :icon="faMagnifyingGlass"
         title="No terms found"
-        description="Try changing your search filters"
+        description="Try changing your search filters."
         class="bg-white dark:bg-gray-950"
       >
         <NeButton kind="tertiary" size="lg" @click="resetFilters">Reset filters</NeButton>
