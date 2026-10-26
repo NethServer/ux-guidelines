@@ -29,10 +29,21 @@ that it agrees with this guide. Remove an item once it is done.
 - [ ] **Colors** page, *Colors documentation*: typos "sush" (such) in the Text token description,
   and "Emerald /500" (Emerald/500) in the NethVoice Product Primary table.
 
+- [ ] **Spacing and border** page, *Border radius* table: the names follow Tailwind 3 (`Rounded sm`,
+  `Rounded`, `Rounded md`…), while the variables follow Tailwind 4 (`rounded-xs` 2 px,
+  `rounded-sm` 4 px, `rounded-md` 6 px…). Rename the rows as the variables.
+
 ## To complete or remove
 
 - [ ] **Table** page, *Guideline and use cases*: still the template, with placeholder text. Fill
   it in or remove it.
+
+## Questions for the designer
+
+- [ ] **Spacing and border** page, *Focus ring*: when is the "Focus ring/2 … primary" effect style
+  (shade 700) used instead of "Focus ring/2" (shade 500)? In vue-components the primary button
+  uses shade 500, and shade 700 appears only on the focused card of `NeCheckboxCards` and
+  `NeRadioSelection`.
 
 ## Once the writing rules live in this guide
 
